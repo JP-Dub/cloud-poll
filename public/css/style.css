@@ -1,0 +1,423 @@
+
+@media only screen and (min-height: 968px) {
+  body {
+    height: 90vh;
+  }
+}
+
+@media only screen and (orientation: landscape) {
+    body {
+        height: 50vh;
+    }
+  .container {
+  margin-top: 100px;
+  }
+}
+
+
+body {
+  position: relative;
+  font-family: georgia, helvetica, arial, sans-serif;
+  margin: 25px;
+  margin-top: 0;
+  height: 100vh;
+  border: 1px solid white;
+  z-index: -2;
+}
+
+div {
+  height: 95%;
+}
+
+p {
+ font-size: 1.2vmax; 
+}
+
+/* Navbar styling lines 38 - 60 */
+
+nav { 
+  position: absolute;
+  top: 0;
+  width: 100%;
+  vertical-align: middle;
+  color: white;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+20,2989d8+50,1e5799+80&0+0,0.8+15,1+19,1+81,0.8+85,0+100;Blue+Two+Sided+Transparent */
+  background: -moz-linear-gradient(top, rgba(30,87,153,0) 0%, rgba(30,87,153,0.8) 15%, rgba(30,87,153,1) 19%, rgba(30,87,153,1) 20%, rgba(41,137,216,1) 50%, rgba(30,87,153,1) 80%, rgba(30,87,153,1) 81%, rgba(30,87,153,0.8) 85%, rgba(30,87,153,0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(30,87,153,0) 0%,rgba(30,87,153,0.8) 15%,rgba(30,87,153,1) 19%,rgba(30,87,153,1) 20%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 80%,rgba(30,87,153,1) 81%,rgba(30,87,153,0.8) 85%,rgba(30,87,153,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(30,87,153,0) 0%,rgba(30,87,153,0.8) 15%,rgba(30,87,153,1) 19%,rgba(30,87,153,1) 20%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 80%,rgba(30,87,153,1) 81%,rgba(30,87,153,0.8) 85%,rgba(30,87,153,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+nav p {
+  display: inline-block; 
+  margin-left: 12.5%;
+  margin-right: 12.5%;
+}
+
+.navbar {
+  float: right;
+  text-align: right; 
+}
+
+/* Background template styling and main header lines 66 - 117 */
+
+#top-header {
+  left: 50%;
+  position: relative; /* absolute
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;*/
+  margin-left: -225px; /*-215px*/
+  margin-top: 150px;
+  width: 400px;
+  height: 180px;
+  box-shadow: 26px 26px 8px #595959;
+}
+
+.container {
+  border: 6px outset lightgrey; 
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+6,dedede+19,d2d2d2+22,ededed+39,d6d6d6+50,dedede+58,c4c4c4+67,d6d6d6+83,d6d6d6+83,ededed+90 */
+  background: rgb(255,255,255); /* Old browsers */
+  background: -moz-linear-gradient(45deg, rgba(255,255,255,1) 6%, rgba(222,222,222,1) 19%, rgba(210,210,210,1) 22%, rgba(237,237,237,1) 39%, rgba(214,214,214,1) 50%, rgba(222,222,222,1) 58%, rgba(196,196,196,1) 67%, rgba(214,214,214,1) 83%, rgba(214,214,214,1) 83%, rgba(237,237,237,1) 90%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, rgba(255,255,255,1) 6%,rgba(222,222,222,1) 19%,rgba(210,210,210,1) 22%,rgba(237,237,237,1) 39%,rgba(214,214,214,1) 50%,rgba(222,222,222,1) 58%,rgba(196,196,196,1) 67%,rgba(214,214,214,1) 83%,rgba(214,214,214,1) 83%,rgba(237,237,237,1) 90%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, rgba(255,255,255,1) 6%,rgba(222,222,222,1) 19%,rgba(210,210,210,1) 22%,rgba(237,237,237,1) 39%,rgba(214,214,214,1) 50%,rgba(222,222,222,1) 58%,rgba(196,196,196,1) 67%,rgba(214,214,214,1) 83%,rgba(214,214,214,1) 83%,rgba(237,237,237,1) 90%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+header {
+  text-align: center;
+}
+
+h1 {
+  margin-top: 5px;
+  font-size: 60px;
+  font-weight: bold;
+  color: rgba(41,137,216,1) ;
+  text-shadow: 4px 2px 2px dimgrey;
+}
+
+main {
+  margin-top: -35px;
+  margin-left: auto;
+  margin-right: auto;
+  border-top: 6px double white;
+  position: relative;
+  text-align: center;
+  width: 300px;
+  height: 75px;
+}
+
+main p{  /*:nth-child(1)*/
+  margin-top: 10px;
+  font-size: 18px;  /*22px*/
+}
+
+/* Login header styling and position */
+
+#login-header {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 35px;
+  width: 400px;
+  height: 290px;
+  /*box-shadow: 16px 16px 4px #595959;*/
+  box-shadow: 8px 8px 2px #595959;
+}
+
+#signin-header {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  width: 400px;
+  height: 220px;
+  /*box-shadow: 16px 16px 4px #595959;*/
+  box-shadow: 8px 8px 2px #595959;
+}
+
+button {
+  z-index: 1;
+  margin-top: 12px;
+  height: 50px;
+  width: 220px;
+  color: white;
+  border-radius: 8px;
+  background-color: #8c8c8c;
+  border: 1px solid white;
+  box-shadow: inset -4px -4px 26px 6px #4d4d4d;
+  cursor: pointer; 
+}
+
+button img {
+  float: left;
+  margin-top: 8px;
+  margin-left: 5px;
+  border-radius: 30px;
+}
+
+button p {
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+button:hover {
+  background-color: rgba(41,137,216,1);
+  box-shadow: inset -4px -4px 26px 4px #1c5f97;
+}
+
+button:active {
+  box-shadow: none;
+}
+
+form {
+  margin-top: 10px;
+  margin-left: 20px;
+  text-align: left;
+}
+
+#signupResponse {
+  margin-top: 45px;
+  color: blue;
+  text-align: center;
+}
+
+/* Footer bar styling lines 176 - 188 */
+
+footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  text-align: center;
+  vertical-align: middle;
+  color: white;
+
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+20,2989d8+50,1e5799+80&0+0,0.8+15,1+19,1+81,0.8+85,0+100;Blue+Two+Sided+Transparent */
+  background: -moz-linear-gradient(top, rgba(30,87,153,0) 0%, rgba(30,87,153,0.8) 15%, rgba(30,87,153,1) 19%, rgba(30,87,153,1) 20%, rgba(41,137,216,1) 50%, rgba(30,87,153,1) 80%, rgba(30,87,153,1) 81%, rgba(30,87,153,0.8) 85%, rgba(30,87,153,0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(30,87,153,0) 0%,rgba(30,87,153,0.8) 15%,rgba(30,87,153,1) 19%,rgba(30,87,153,1) 20%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 80%,rgba(30,87,153,1) 81%,rgba(30,87,153,0.8) 85%,rgba(30,87,153,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(30,87,153,0) 0%,rgba(30,87,153,0.8) 15%,rgba(30,87,153,1) 19%,rgba(30,87,153,1) 20%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 80%,rgba(30,87,153,1) 81%,rgba(30,87,153,0.8) 85%,rgba(30,87,153,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+/* unvisited link */
+a:link {
+    color: white;
+}
+
+/* visited link */
+a:visited {
+    color: lime;
+}
+
+/* mouse over link */
+a:hover {
+    color: hotpink;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
+
+
+/* POLL-CREATION STYLING */
+#poll-crea-ques-form {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#ques-header {
+  position: relative; /* absolute
+    top: 0;
+  bottom: 0;
+  left: 50%;
+  right: 0;
+  margin: auto;*/
+  left: 50%;
+  margin-left: -325px;
+  margin-top: 150px;
+  width: 600px;
+  height: 180px;
+  box-shadow: 26px 26px 8px #595959;
+}
+
+.questions {
+  padding-top: 5px;
+  width: 400px;
+}
+
+#ans-header {
+  position: relative;
+  /*left: 50%;*/
+  margin-left: auto; /*-295px*/
+  margin-right: auto;
+  margin-top: 35px;
+  width: 600px;
+  height: auto;
+  box-shadow: 8px 8px 2px #595959;/*16px 16px 4px #595959;*/
+}
+
+.answers {
+  width: 400px;
+  height: auto;
+}
+
+ol li {
+  margin-left: 45px;
+  text-align: justify;
+}
+
+ol input {
+  border: 1px solid dimgray;
+  text-align: left;
+  margin-left: -40px;
+}
+
+#submit-btn {
+  z-index: 1;
+  margin-top: 12px;
+  height: 50px;
+  width: 220px;
+  color: white;
+  border-radius: 8px;
+  background-color: #8c8c8c;
+  border: 1px solid white;
+  box-shadow: inset -4px -4px 26px 6px #4d4d4d;
+  cursor: pointer; 
+}
+
+#submit-btn:hover {
+  background-color: rgba(41,137,216,1);
+  box-shadow: inset -4px -4px 26px 4px #1c5f97;
+}
+
+#submit-btn:active {
+  box-shadow: none;
+}
+
+/* POLL-VAULT STYLING */
+
+#vault-header {
+  left: 50%;
+  position: relative; /* absolute
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;*/
+  margin-left: -225px; /*-215px*/
+  margin-top: 70px;
+  width: 400px;
+  height: 180px;
+  box-shadow: 26px 26px 8px #595959;
+}
+
+#poll-vault {
+  margin-top: 35px;
+  width: auto;
+  height: 75%; 
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+  color: rgba(41,137,216,1);
+}
+
+.left article {
+  margin-left: 30px;
+}
+
+.right article {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.left {
+  box-sizing: border-box;
+  position: absolute;
+  box-shadow: inset 0px 0px 38px black;
+  width: 47%;
+  height: 60%;
+  right: 50%;
+  margin-right: 15px;
+  
+}
+
+.right {
+  box-sizing: border-box;
+  position: absolute;
+  box-shadow: inset 0px 0px 38px black;
+  width: 47%;
+  height: 60%;
+  left: 50%;
+  margin-left: 15px;
+  
+}
+
+
+/*
+#submit {
+  position: absolute;
+  width: 75px;
+  height: 30px;
+  margin-top: -8px;
+  margin-left: 0;
+}
+
+#options {
+  position: absolute;
+  width: 150px;
+  height: 30px;
+  left: 50%;
+  margin-top: -8px;
+  margin-left: -75px;
+}*/
+
+/*.container {
+
+  margin-top: 4vmax;
+  margin-left: auto;
+  margin-right: auto;
+  height: 90%;
+  border: 1px solid lime;
+}
+
+header p {
+  margin-top: -3vmax;
+}
+
+main {
+  margin-left: auto;
+  margin-right: auto;
+  border-top: 1px solid lightgrey;
+  position: relative;
+  text-align: center;
+  height: 86%;
+  width: 50%;
+}
+
+main p:nth-child(1){ 
+  padding-top: 4vmin;
+  font-size: 1.2vmax; 
+}
+;*/
+
+/*
+.login {
+ padding-top: 4vmin; 
+}*/
+
+
+
+/*
+.inset {
+  z-index: -1;
+  position: absolute;
+  width: 224px;
+  height: 54px;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-left: 40px;
+  border: 1px solid white;
+  background-color: lime;
+}*/

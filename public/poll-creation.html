@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FCC Challenge: Build a voting app</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="public/css/style.css"> 
+  </head>
+  <body>
+    <div>
+     
+    <nav>
+      <p><a href="/">Cloud Poll</a> | <a href="/poll-vault">Poll Vault</a></p>
+      <!--<p class="navbar"><a href="/signin">Sign In</a> | <a href="/signup">Sign Up</a></p>-->
+    </nav>
+     
+    <form id="poll-crea-ques-form" method="post" action="/poll-creation">
+      
+      <div id="ques-header" class="container">
+        <header>
+          <h1>Poll Creation</h1>
+        </header>
+        <main class="questions">   
+          <p><em>Write your question below...</em></p>
+          <input type="text" name="question" placeholder="What is your favorite color?" size="46">
+        </main>   
+      </div> <!-- end of div .container -->
+    
+      <div id="ans-header" class="container">
+        <header>
+          <h1>Answers</h1>
+        </header>
+        <main class="answers">
+          <p><em>Provide answers to your question.</em></p>
+          <ol>
+            <li>Option:</li>
+            <input type="text" name="answers" placeholder="blue" size="40">
+            <li>Option:</li>
+            <input type="text" name="answers" placeholder="red" size="40">
+          </ol>
+          <button id="options-btn" onclick="expand()">Create more options</button>
+          <input id="submit-btn" type="submit" value="Save your Poll"> 
+          <p><!--BLANK SPACE--></p>
+        </main>     
+      </div>
+      
+    </form>
+     
+     <footer>
+      <p>Copyright &copy 2018 jDub's Code Studio</p>
+    </footer>
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="/public/js/client.js"></script>
+     
+    </div> 
+  </body>
+</html>

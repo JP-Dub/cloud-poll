@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FCC Challenge: Build a voting app</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/public/css/style.css"> 
+  </head>
+  <body>
+   <div>
+     
+    <nav>
+      <p><a href="/">Cloud Poll</a></p>
+      <p class="navbar"><a href="/signin">Sign In</a> | <a href="/signup">Sign Up</a></p>
+    </nav>
+   
+    <div id="top-header" class="container">
+      <header>
+        <h1>Cloud Poll</h1>
+      </header>
+      <main>   
+        <p><em>Create custom polls to share with your friends and family!</em></p> 
+      </main>
+    </div> <!-- end of div .container -->
+    
+    <div id="login-header" class="container">
+      <header>
+        <h1>Sign Up</h1>
+      </header>
+      <main>
+      <form method="post" action="/signup/">
+        Name / Display Name:<br>
+        <input type="text" name="displayname" placeholder="your name or username" required size="32"><br>
+        Email: <span style="font-size:14px"><em>(optional)</em></span><br>
+        <input type="text" name="email" placeholder="someone@anywho.com" size="32"><br>
+        Password:<br>
+        <input type="password" name="password" required placeholder="password123" size="32"><br>
+        Confirm Password:<br>
+        <input type="password" name="confirm" required placeholder="password123" size="32">
+        <input type="submit" value="Sign Up">
+      </form>
+      <p id="signupResponse"><em></em></p>
+      </main>
+    </div>
+   
+     
+     <footer>
+      <p>Copyright &copy 2018 jDub's Code Studio</p>
+     </footer>
+
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="/public/js/client.js"></script>
+     
+   </div> 
+  </body>
+</html>
