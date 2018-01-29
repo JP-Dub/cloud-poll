@@ -1,57 +1,88 @@
-'use strict';
+var path = process.cwd(),
+    bP = require('body-parser'),
+    urlEncPar = bP.urlencoded({extended: true});
 
-var path = process.cwd();
-var ClickHandler = require(path + '/app/controllers/clickHandler.server.js');
+module.exports = function(app) {
+  /*
+  	function isLoggedIn (req, res, next) {
+		  if (req.isAuthenticated()) {
+			  return next();
+		  } else {
+			  res.redirect('/');
+		  }
+	  }*/
 
-module.exports = function (app, passport) {
-
-	function isLoggedIn (req, res, next) {
-		if (req.isAuthenticated()) {
-			return next();
-		} else {
-			res.redirect('/login');
-		}
-	}
-
-	var clickHandler = new ClickHandler();
-
-	app.route('/')
-		.get(isLoggedIn, function (req, res) {
-			res.sendFile(path + '/public/index.html');
-		});
-
-	app.route('/login')
-		.get(function (req, res) {
-			res.sendFile(path + '/public/login.html');
-		});
-
-	app.route('/logout')
-		.get(function (req, res) {
-			req.logout();
-			res.redirect('/login');
-		});
-
-	app.route('/profile')
-		.get(isLoggedIn, function (req, res) {
-			res.sendFile(path + '/public/profile.html');
-		});
-
-	app.route('/api/:id')
-		.get(isLoggedIn, function (req, res) {
-			res.json(req.user.github);
-		});
-
-	app.route('/auth/github')
-		.get(passport.authenticate('github'));
-
-	app.route('/auth/github/callback')
-		.get(passport.authenticate('github', {
-			successRedirect: '/',
-			failureRedirect: '/login'
-		}));
-
-	app.route('/api/:id/clicks')
-		.get(isLoggedIn, clickHandler.getClicks)
-		.post(isLoggedIn, clickHandler.addClick)
-		.delete(isLoggedIn, clickHandler.resetClicks);
-};
+    app.route('/')
+        .get(function(req, res) {
+        res.sendFile(path + '/public/index.html');
+    });
+  
+    app.route('/poll-creation')
+        .get(function(req, res) {
+            res.sendFile(path + '/public/poll-creation.html'); 
+        }).post(urlEncPar, function(req, res, next) {
+        
+        var reg = /(^\w)(.+)($\b|.)/g;
+        var form = req.body,
+            answers = form.answers,
+            question = form.question;
+        console.log(answers, question)
+        function repairSent(match, p1, p2) {
+          return p1.toUpperCase() + p2.toLowerCase();
+        }
+    
+        var results = question.replace(reg, repairSent) + "?";
+        if(results) {
+        next();
+        }
+    });
+  
+  app.get('/poll-vault', function(req, res) {
+    res.sendFile(path + '/public/poll-vault.html');
+  });
+  
+  app.get('/signup', function(req, res) {
+    res.sendFile(path + '/public/signup.html');
+  })/*
+    .post('/signup', passport.authenticate('local', { 
+      successRedirect: '/poll-creation',
+      failureRedirect: '/signup',
+      failureFlash: true})
+          );*/
+  
+   .post( '/signup', urlEncPar, function(req, res, results) {
+    var reg = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/igm;
+    var form = req.body,
+        email = form.email,
+        password = form.password,
+        err = "";
+    
+    if(!email.match(reg)) {
+      err = "Your email doesn't appear valid.";  
+    } else
+    if(password !== form.confirm || password === "") {
+      err = "Your password doesn't match.";
+    } else {
+      err = "Your email and password have been saved.";
+      res.redirect('/poll');
+    }   
+    res.send(err);
+    });
+  
+ /* 
+  app.get('/signin', function(req, res) {
+      res.sendFile(path + '/public/signin.html');
+  })   
+    .post( '/signup', urlEncPar, function(req, res, results) {
+    var form = req.body,
+        email = form.email,
+        password = form.password,
+        err = "";
+    
+    if(email === "database" && password === "database") {
+      res.redirect('/poll');
+    }   
+    res.send(err);  
+  });
+  */
+}

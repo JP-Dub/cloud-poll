@@ -1,39 +1,88 @@
 <!DOCTYPE html>
-
 <html>
+  <head>
+    <title>FCC Challenge: Build a voting app</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/public/css/style.css"> 
+  </head>
+  <body>
+    <div>
+     
+    <nav>
+      <p><a href="/">Cloud Poll</a></p>
+      <p class="navbar"><a href="/signup">Sign Up</a></p>
+    </nav>
+    
+    <div id="top-header" class="container">    
+      <header>
+        <h1>Cloud Poll</h1>
+      </header>
+      <main>   
+        <p><em>Create custom polls to share with your friends and family!</em></p> 
+      </main>
+    </div> <!-- end of div .container -->
+    
+    <div id="login-header" class="container">
+      <header>
+        <h1>Login</h1>
+      </header>
+      <main>
+        <a href="/poll-creation"><button class="btn" id="login-btn"><img src="/public/img/github_32px.png" alt="github logo"><p>Login with Github</p></button></a>
+        <a href="/poll-creation"><button class="btn" id="google-btn"><img src="/public/img/google_32.jpg" width="32" height="32" alt="github logo"><p>Login with Google</p></button></a>
+         <a href="/poll-vault"><button class="btn"><img src="/public/img/icon-vault.png" width="32" height="32"><p>Open the Poll Vault</p></button></a>
+      </main>
+    </div>
+     
+    <div id="signin-header" class="container">
+      <header>
+        <h1>Sign In</h1>
+      </header> 
+      <main>
+        <form method="post" action="/signup/">
+          Email / Username:<br>
+          <input type="text" name="email" required placeholder="joe-shmoe42@anywho.com" size="32"><br>
+          Password:<br>
+          <input type="password" name="password" placeholder="password123" required size="32"><br>
+          <input type="submit" value="Sign In">
+        </form>
+        <p id="signupResponse"><em>The blah blah blah or view the poll vault and participate in any of the polls</em></p>
+      </main>
+    </div>
+     
+    <footer>
+      <p>Copyright &copy 2018 jDub's Code Studio</p>
+    </footer>
 
-	<head>
-		<title>Clementine.js - The elegant and lightweight full stack JavaScript boilerplate.</title>
-		
-		<link href="/public/css/main.css" rel="stylesheet" type="text/css">
-	</head>
-
-	<header>
-		<p>Welcome, <span id="display-name"></span>!</p>
-		<a class="menu" href="/profile">Profile</a>
-		<p>|</p>
-		<a class="menu" href="/logout">Logout</a>
-	</header>
-
-	<body>
-		<div class="container">
-			<img src="/public/img/clementine_150.png" />
-			<br />
-			<p class="clementine-text">Clementine.js</p>
-		</div>
-	
-		<div class="container">
-			<p>You have clicked the button <span id="click-nbr"></span> times.</p>
-			<br />
-			<div class="btn-container">
-				<button type="submit" class="btn btn-add">CLICK ME!</button>
-				<button class="btn btn-delete">RESET</button>
-			</div>
-		</div>
-		
-		<script type="text/javascript" src="common/ajax-functions.js"></script>
-		<script type="text/javascript" src="controllers/clickController.client.js"></script>
-		<script type="text/javascript" src="controllers/userController.client.js"></script>
-	</body>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="/public/js/client.js"></script>
+     
+    </div> 
+  </body>
 </html>
+
+<!-- 
+
+    <div class="container">
+    
+      <header>
+      <h1>
+        Cloud Poll
+      </h1>
+      <p>
+        <em>Create custom polls to share with your friends and family!</em>
+      </p>   
+    </header>
+
+    <main>   
+      <p>Login or register to create and share polls or view this user's poll vault.</p>
+      <button>Login</button>
+  
+        <button>Poll Vault</button>
+     <button>Register</button>
+    </main>
+    
+    </div> 
+
+-->

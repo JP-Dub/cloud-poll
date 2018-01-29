@@ -1,32 +1,29 @@
 'use strict';
 
-var express = require('express');
-var routes = require('./app/routes/index.js');
-var mongoose = require('mongoose');
-var passport = require('passport');
-var session = require('express-session');
+var routes = require('./app/routes/index.js'),
+    session = require('express-session'),
+    passport = require('passport'),
+    mongoose = require('mongoose'),
+    express = require('express'),
+    app = express();
 
-var app = express();
+//require('./config/passport')(passport);
 require('dotenv').load();
-require('./app/config/passport')(passport);
 
-mongoose.connect(process.env.MONGO_URI);
+var options = {
+	useMongoClient: true
+};
+
+mongoose.connect(process.env.MONGO_URI, options);
 mongoose.Promise = global.Promise;
 
-app.use('/controllers', express.static(process.cwd() + '/app/controllers'));
-app.use('/public', express.static(process.cwd() + '/public'));
-app.use('/common', express.static(process.cwd() + '/app/common'));
 
-app.use(session({
-	secret: 'secretClementine',
-	resave: false,
-	saveUninitialized: true
-}));
+app.use('/public', express.static(process.cwd() + '/public'));
 
 app.use(passport.initialize());
 app.use(passport.session());
 
-routes(app, passport);
+routes(app);
 
 var port = process.env.PORT || 8080;
 app.listen(port,  function () {
