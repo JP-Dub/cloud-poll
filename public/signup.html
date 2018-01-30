@@ -11,8 +11,9 @@
    <div>
      
     <nav>
-      <p><a href="/">Cloud Poll</a></p>
-      <p class="navbar"><a href="/signin">Sign In</a> | <a href="/signup">Sign Up</a></p>
+      <div class="navbar">
+        <p class="navbar-left"><a href="/">Cloud Poll</a></p>
+      </div>
     </nav>
    
     <div id="top-header" class="container">
@@ -20,7 +21,7 @@
         <h1>Cloud Poll</h1>
       </header>
       <main>   
-        <p><em>Create custom polls to share with your friends and family!</em></p> 
+        <p><em>Create your own account to create and modify your own polls!</em></p> 
       </main>
     </div> <!-- end of div .container -->
     
@@ -29,13 +30,13 @@
         <h1>Sign Up</h1>
       </header>
       <main>
-      <form method="post" action="/signup/">
+      <form method="post" action="/signup">
         Name / Display Name:<br>
         <input type="text" name="displayname" placeholder="your name or username" required size="32"><br>
         Email: <span style="font-size:14px"><em>(optional)</em></span><br>
         <input type="text" name="email" placeholder="someone@anywho.com" size="32"><br>
         Password:<br>
-        <input type="password" name="password" required placeholder="password123" size="32"><br>
+        <input type="password" name="password" required placeholder="4 character minimum" size="32"><br>
         Confirm Password:<br>
         <input type="password" name="confirm" required placeholder="password123" size="32">
         <input type="submit" value="Sign Up">

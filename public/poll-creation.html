@@ -11,8 +11,11 @@
     <div>
      
     <nav>
-      <p><a href="/">Cloud Poll</a> | <a href="/poll-vault">Poll Vault</a></p>
-      <!--<p class="navbar"><a href="/signin">Sign In</a> | <a href="/signup">Sign Up</a></p>-->
+      <div class="navbar">
+        <p class="navbar-left"><a href="/">Cloud Poll</a></p>
+        <p class="navbar-center">Welcome, <span id="nav-welcome"></span></p>
+        <p class="navbar-right"><a href="/poll-vault">Poll Vault</a></p>
+      </div>
     </nav>
      
     <form id="poll-crea-ques-form" method="post" action="/poll-creation">
@@ -39,14 +42,14 @@
             <li>Option:</li>
             <input type="text" name="answers" placeholder="red" size="40">
           </ol>
-          <button id="options-btn" onclick="expand()">Create more options</button>
-          <input id="submit-btn" type="submit" value="Save your Poll"> 
+          <div id="options-btn"><p>Create Options</p></div>
+          <input id="submit-btn" type="submit" value="Save Poll"> 
           <p><!--BLANK SPACE--></p>
         </main>     
-      </div>
-      
+      </div>     
     </form>
      
+      
      <footer>
       <p>Copyright &copy 2018 jDub's Code Studio</p>
     </footer>
