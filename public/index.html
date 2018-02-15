@@ -31,9 +31,9 @@
         <h1>Login</h1>
       </header>
       <main>
-        <a href="/poll-creation"><button class="btn" id="login-btn"><img src="/public/img/github_32px.png" alt="github logo"><p>Login with Github</p></button></a>
-        <a href="/poll-creation"><button class="btn" id="google-btn"><img src="/public/img/google_32.jpg" width="32" height="32" alt="github logo"><p>Login with Google</p></button></a>
-         <a href="/poll-vault"><button class="btn"><img src="/public/img/icon-vault.png" width="32" height="32"><p>Open the Poll Vault</p></button></a>
+        <a href="/auth/github"><button id="login-btn"><img src="/public/img/github_32px.png" alt="github logo"><p>Login with Github</p></button></a>
+        <a href="/poll-creation"><button id="google-btn"><img src="/public/img/google_32.jpg" width="32" height="32" alt="github logo"><p>Login with Google</p></button></a>
+        <a href="/poll-vault"><button><img src="/public/img/icon-vault.png" width="32" height="32"><p>Open the Poll Vault</p></button></a>
       </main>
     </div>
      
@@ -42,12 +42,12 @@
         <h1>Sign In</h1>
       </header> 
       <main>
-        <form method="post" action="/signup/">
-          Email / Username:<br>
-          <input type="text" name="email" required placeholder="joe-shmoe42@anywho.com" size="32"><br>
-          Password:<br>
-          <input type="password" name="password" placeholder="password123" required size="32"><br>
-          <input type="submit" value="Sign In">
+        <form id="form" method="post" action="/login">
+          <label>Username:</label><br>
+          <input type="text" name="username" required placeholder="joe-shmoe42@anywho.com" size="32"><br>
+          <label>Password:</label><br>
+          <input type="password" autocomplete="section-blue current-password" name="password" required placeholder="password123" size="32"><br>
+          <button type="submit"><p>Sign In</p></button>
         </form>
         <p id="signupResponse"><em>The blah blah blah or view the poll vault and participate in any of the polls</em></p>
       </main>
@@ -56,11 +56,10 @@
     <footer>
       <p>Copyright &copy 2018 jDub's Code Studio</p>
     </footer>
-
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
-    <script src="/public/js/client.js"></script>
-     
-    </div> 
+    <script type="text/javascript" src="common/ajax-functions.js"></script>
+  	<script type="text/javascript" src="controllers/myController.client.js"></script>
   </body>
 </html>
 

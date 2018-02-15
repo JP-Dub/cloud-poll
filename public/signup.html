@@ -25,21 +25,21 @@
       </main>
     </div> <!-- end of div .container -->
     
-    <div id="login-header" class="container">
+    <div id="signup-header" class="container">
       <header>
         <h1>Sign Up</h1>
       </header>
       <main>
-      <form method="post" action="/signup">
+      <form id="form" method="post" action="/signup/user">
         Name / Display Name:<br>
-        <input type="text" name="displayname" placeholder="your name or username" required size="32"><br>
+        <input type="text" autocomplete="on" name="displayname" placeholder="case-sensitive" required size="32"><br>
         Email: <span style="font-size:14px"><em>(optional)</em></span><br>
-        <input type="text" name="email" placeholder="someone@anywho.com" size="32"><br>
+        <input type="text" autocomplete="on" name="email" placeholder="someone@anywho.com" size="32"><br>
         Password:<br>
-        <input type="password" name="password" required placeholder="4 character minimum" size="32"><br>
+        <input type="password" autocomplete="on" name="password" required placeholder="minimum 4 characters" size="32"><br>
         Confirm Password:<br>
-        <input type="password" name="confirm" required placeholder="password123" size="32">
-        <input type="submit" value="Sign Up">
+        <input type="password" name="confirm" required placeholder="re-type password" size="32">
+        <button type="submit" value="Sign Up">Sign Up</button>
       </form>
       <p id="signupResponse"><em></em></p>
       </main>
@@ -49,11 +49,12 @@
      <footer>
       <p>Copyright &copy 2018 jDub's Code Studio</p>
      </footer>
-
-  
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
-    <script src="/public/js/client.js"></script>
+    </div>
      
-   </div> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="common/ajax-functions.js"></script>
+  	<script type="text/javascript" src="controllers/myController.client.js"></script>
+  	<!--<script type="text/javascript" src="controllers/formHandler.server.js"></script>-->
+     
   </body>
 </html>

@@ -1,51 +1,87 @@
 var path = process.cwd(),
     bP = require('body-parser'),
     urlEncPar = bP.urlencoded({extended: true}),
-    check = require('./exports');
-    
+    check = require('../controllers/dataController.server');
+    //'./app/controllers/dataController.client');
 
-module.exports = function(app) {
-  app.set("json spaces", 2);
-  /*
+module.exports = function(app, passport) {
+    app.set("json spaces", 2);
+  
   	function isLoggedIn (req, res, next) {
 		  if (req.isAuthenticated()) {
 			  return next();
 		  } else {
 			  res.redirect('/');
 		  }
-	  }*/
+	  }
 
     app.route('/')
         .get(function(req, res) {
           res.sendFile(path + '/public/index.html');
         });
-  
+        
     app.route('/poll-creation')
-        .get(function(req, res) {
+        .get(isLoggedIn, function(req, res, next) {
           res.sendFile(path + '/public/poll-creation.html'); 
-        }).post(urlEncPar, function(req, res, next) {
-          
-          check(req.path, req.body, function forward(err, results) {
-            if(err) return console.error(err, "error");
-            res.json(results);
-          });  
+        }) 
+        
+    app.route('/poll-creation/:saved')    
+        .post(isLoggedIn, urlEncPar, function(req, res) {
+            check(req.user, req.path, req.body, function(results) {
+                res.redirect('/poll-creation')
+                });  
         });
   
     app.route('/poll-vault')
-        .get(function(req, res) {
+        .get( function(req, res) {
           res.sendFile(path + '/public/poll-vault.html');
+        })
+    
+    app.route('/poll-vault/:results')
+        .get(function(req, res) {
+            check(req.user, req.path, null, function(results) {
+            //console.log("ctrl results", results )
+            res.json(results)    
+            })
+            
         });
+        
   
     app.route('/signup')
         .get(function(req, res) {
           res.sendFile(path + '/public/signup.html');
-        })
-        .post(urlEncPar, function(req, res, results) {
-          check(req.path, req.body, function forward(err, results) {
-            if (err) return res.send({"Error": err});
-            res.redirect(results);
-          });   
         });
+       
+    app.route('/signup/user')
+        .post(urlEncPar, function(req, res) {
+            check(null, req.path, req.body, function(err, results) {
+                if (err) return res.json(err);
+                res.redirect(results);
+            }); 
+        });
+        
+	app.route('/api/:user')
+		.get(isLoggedIn, function (req, res) {
+		    console.log("called, api/:user")
+			res.json(req.user.github);
+		});        
+       
+    app.route('/auth/github')
+		.get(passport.authenticate('github'));
+
+	app.route('/auth/github/callback')
+		.get(passport.authenticate('github', {
+			successRedirect: '/poll-creation',
+			failureRedirect: '/'
+		})); 
+		
+	app.route('/login')
+	    .post(passport.authenticate('local', { 
+	        successRedirect: '/poll-creation',
+	        failureRedirect: '/',
+	        failureFlash: true 
+	    }));
+        
 };
 
  /* 

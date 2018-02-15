@@ -134,7 +134,7 @@ main {
   position: relative;
   text-align: center;
   width: 300px;
-  height: 75px;
+  height: auto; /*75px*/
 }
 
 main p{  /*:nth-child(1)*/
@@ -150,7 +150,7 @@ main p{  /*:nth-child(1)*/
   margin-right: auto;
   margin-top: 35px;
   width: 400px;
-  height: 290px;
+  height: 285px;
   /*box-shadow: 16px 16px 4px #595959;*/
   box-shadow: 8px 8px 2px #595959;
 }
@@ -161,7 +161,18 @@ main p{  /*:nth-child(1)*/
   margin-right: auto;
   margin-top: 15px;
   width: 400px;
-  height: 220px;
+  height: 250px;
+  /*box-shadow: 16px 16px 4px #595959;*/
+  box-shadow: 8px 8px 2px #595959;
+}
+
+#signup-header {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 35px;
+  width: 400px;
+  height: 330px;
   /*box-shadow: 16px 16px 4px #595959;*/
   box-shadow: 8px 8px 2px #595959;
 }
@@ -204,6 +215,11 @@ form {
   margin-top: 10px;
   margin-left: 20px;
   text-align: left;
+}
+
+form button {
+  margin-left:18px;
+  font-size: 16px;
 }
 
 #signupResponse {
@@ -257,7 +273,7 @@ a:active {
 
 #ques-header {
   position: relative; /* absolute
-    top: 0;
+  top: 0;
   bottom: 0;
   left: 50%;
   right: 0;
@@ -275,7 +291,7 @@ a:active {
   width: 400px;
 }
 
-#ans-header {
+#choice-header {
   position: relative;
   /*left: 50%;*/
   margin-left: auto; /*-295px*/
@@ -286,7 +302,7 @@ a:active {
   box-shadow: 8px 8px 2px #595959;/*16px 16px 4px #595959;*/
 }
 
-.answers {
+.choices {
   width: 400px;
   height: auto;
 }
@@ -303,9 +319,11 @@ ol input {
 }
 
 #submit-btn {
-  font-size: 18px;
+  font-size: 16px;
   z-index: 1;
   margin-top: 12px;
+  margin-left: auto;
+  margin-right: auto;
   height: 50px;
   width: 220px;
   color: white;
@@ -332,7 +350,8 @@ margin-top: 16px;
 #options-btn {
   font-family: Arial;
   z-index: 2;
-  margin-left: 90px;
+  margin-left: auto;
+  margin-right: auto;
   height: 50px;
   width: 220px;
   color: white;
@@ -352,9 +371,11 @@ margin-top: 16px;
   box-shadow: none;
 }
 
+#options-btn p {
+ font-size: 16px;
+}
 
 /* POLL-VAULT STYLING */
-
 #vault-header {
   left: 50%;
   position: relative; /* absolute
@@ -399,7 +420,6 @@ h2 {
   height: 60%;
   right: 50%;
   margin-right: 15px;
-  
 }
 
 .right {
@@ -410,8 +430,71 @@ h2 {
   height: 60%;
   left: 50%;
   margin-left: 15px;
-  
 }
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  /*border: 1px solid white;*/
+}
+
+ul li {
+  padding: 4px 8px;
+  /*border-bottom: 1px solid white;*/
+}
+
+ul li:last-child {
+  /*border-bottom: none;*/
+}
+
+ul li a {
+  text-decoration: none;
+}
+
+/* unvisited link */
+ul li a:link {
+  color: black;
+}
+
+/* visited link */
+ul li a:visited {
+  color: black;
+}
+
+/* mouse over link */
+ul li a:hover {
+  color: hotpink;
+}
+
+/* selected link */
+ul li a:focus {
+  color: rgba(41,137,216,1);
+}
+
+#postResults {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  color: blue;
+}
+  
+#anwers {
+  margin-left: 25px;
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*
