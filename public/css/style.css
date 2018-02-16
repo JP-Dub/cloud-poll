@@ -415,21 +415,25 @@ h2 {
 .left {
   box-sizing: border-box;
   position: absolute;
-  box-shadow: inset 0px 0px 38px black;
+  box-shadow: inset 0px 0px 28px 5px black;
   width: 47%;
   height: 60%;
   right: 50%;
   margin-right: 15px;
+  border: 1px solid black;
+  overflow: auto;
 }
 
 .right {
   box-sizing: border-box;
   position: absolute;
-  box-shadow: inset 0px 0px 38px black;
+  box-shadow: inset 0px 0px 28px 5px black;
   width: 47%;
   height: 60%;
   left: 50%;
   margin-left: 15px;
+  border: 1px solid black;
+  overflow: auto;
 }
 
 ul {
@@ -439,6 +443,7 @@ ul {
 }
 
 ul li {
+  font-size: 1.2vmax;
   padding: 4px 8px;
   /*border-bottom: 1px solid white;*/
 }
@@ -482,20 +487,37 @@ ul li a:focus {
 #anwers {
   margin-left: 25px;
 }
+
+.voterSpace {
+  position: relative;
+  width: 400px;
+  height: 20px;
+  margin: auto;
+}
+
+.leftSpace {
+  position: absolute;
+  left: 50px;
+  text-align: left;
+}
+
+.centerSpace {
+  position: absolute;
+  text-align: center;
+  left: 50%;
+}
+
+.rightSpace {
+  position: absolute;
+  right: 50px;
+  text-align: right;
+}
  
-
-
-
-
-
-
-
-
-
-
-
-
-
+#myChart {
+ 
+  z-index: 2;
+  border: 1px solid red;
+}
 
 /*
 #submit {

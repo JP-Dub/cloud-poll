@@ -36,21 +36,19 @@
         <h2>Survey Questions</h2> 
         <article>
           <ul id = "vaultResults">
-         <!-- <li><a href="#">List of questions to select here...</a></li>
-          <li><a href="#">List of questions to select here...</a></li>
-          <li><a href="#">List of questions to select here...</a></li>
-          <li><a href="#">List of questions to select here...</a></li>
-          <li><a href="#">List of questions to select here...</a></li>-->
+         <!-- <li><a href="#">List of questions to select here...</a></li>>-->
           </ul>
         </article>
       </div>
       
       <div class="right">
-        <h2>Question selected...</h2>
         <article>
-          <ul id="vaultChoices">
-           
-          </ul>
+          <canvas id="myChart" width="600" height="400"></canvas>
+          <form id="vaultChoices"><h2>Question Selected...</h2>
+            <!--<h2 id="votes">Question selected...</h2>-->
+           <!--choices and votes go in this column-->
+          
+          </form>
         </article>
       </div>
     </div>  
@@ -59,9 +57,12 @@
       <p>Copyright &copy 2018 jDub's Code Studio</p>
     </footer>
     </div> 
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="common/ajax-functions.js"></script>
-  	<script type="text/javascript" src="controllers/myVault.client.js"></script>    
+  	<script type="text/javascript" src="controllers/myVault.client.js"></script>
+  	<!--<script type="text/javascript" src="controllers/myChart.client.js"></script>-->
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js"></script>
 
   </body>
 </html>

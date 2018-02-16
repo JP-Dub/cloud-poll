@@ -23,26 +23,26 @@ module.exports = function(app, passport) {
     app.route('/poll-creation')
         .get(isLoggedIn, function(req, res, next) {
           res.sendFile(path + '/public/poll-creation.html'); 
-        }) 
+        }); 
         
     app.route('/poll-creation/:saved')    
         .post(isLoggedIn, urlEncPar, function(req, res) {
             check(req.user, req.path, req.body, function(results) {
-                res.redirect('/poll-creation')
+                res.redirect('/poll-creation');
                 });  
         });
   
     app.route('/poll-vault')
         .get( function(req, res) {
           res.sendFile(path + '/public/poll-vault.html');
-        })
+        });
     
     app.route('/poll-vault/:results')
         .get(function(req, res) {
             check(req.user, req.path, null, function(results) {
             //console.log("ctrl results", results )
-            res.json(results)    
-            })
+            res.json(results);   
+            });
             
         });
         
