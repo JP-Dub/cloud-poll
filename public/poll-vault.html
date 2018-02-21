@@ -23,7 +23,7 @@
         <h1>Poll Vault</h1>
     </header>
     <main>   
-      <p><em>Select a poll to vote on and see the results of the poll</em></p> 
+      <p><em>Select a poll to vote on and see the results of the poll</em></p><sub>hint: press to change graph</sub> 
     </main> 
     </div> <!-- end of div .container -->
     
@@ -38,13 +38,16 @@
           <ul id = "vaultResults">
          <!-- <li><a href="#">List of questions to select here...</a></li>>-->
           </ul>
+          <p id='data'></p>
         </article>
       </div>
       
       <div class="right">
         <article>
-          <canvas id="myChart" width="600" height="400"></canvas>
-          <form id="vaultChoices"><h2>Question Selected...</h2>
+          <canvas id="myChart" width="400" height="200"></canvas>
+          <form id="vaultChoices" enctype="multipart/form-data" method="post"><!--</form>  method="post" action='/poll-vault/:vote'-->
+            <h2>Question Selected...</h2>
+          
             <!--<h2 id="votes">Question selected...</h2>-->
            <!--choices and votes go in this column-->
           
@@ -58,11 +61,14 @@
     </footer>
     </div> 
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
+    
     <script type="text/javascript" src="common/ajax-functions.js"></script>
   	<script type="text/javascript" src="controllers/myVault.client.js"></script>
-  	<!--<script type="text/javascript" src="controllers/myChart.client.js"></script>-->
-  	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js"></script>
+  	<!--<script type="text/javascript" src="controllers/chart.client.js"></script>-->
+  	
+  	<!--<script type="text/javascript" src="Chart.js"></script>-->
 
   </body>
 </html>

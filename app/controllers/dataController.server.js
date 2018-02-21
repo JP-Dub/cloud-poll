@@ -28,13 +28,13 @@ module.exports = function(user, path, form, forward) {
         if(err) return console.error(err);
         console.log("docs" , docs)
     }*/
-    /*
+    
     var query = User.find({}).select({"_id": 1 ,"poll" : 1, "github": 1})
-    //var query = User.find({}).remove({ "_id": "5a85d11cd3eb7c0bfb17ff42"})// , "_id": "5a7cb4cdf6ffb114e45ebf86"}) //, "_id": "5a7cc27c30c3ab1638c01f97" })
+    //var query = User.find({}).remove({ "_id": "5a85d2f72c6d750c26e500dd"})// , "_id": "5a7cb4cdf6ffb114e45ebf86"}) //, "_id": "5a7cc27c30c3ab1638c01f97" })
     .exec(function (err, user) {
         if(err) return console.error(err);
         console.log(user)
-    })*/
+    })
     
     if(path === '/poll-creation/:saved') {
         var ans = form.answers, 
@@ -42,7 +42,7 @@ module.exports = function(user, path, form, forward) {
               
         process(ans, quest, function(question, choice) {
            // if(question) {
-            /*          
+                     
             User.findOneAndUpdate({ "github" : user.github })
                 .exec(function (err, user) {
                 if(err) return console.error(err);
@@ -60,7 +60,7 @@ module.exports = function(user, path, form, forward) {
                         if(err) return console.error(err)
                             return console.log(user);
                     });
-                }) */
+                }) 
                 
            return forward({"message": "Your message has been saved!","Question": question,  "Answers": choice});
             });
@@ -108,7 +108,7 @@ module.exports = function(user, path, form, forward) {
         User.find({}).select({"_id" : 1, "poll": 1, "question" : 1})
         .exec(function(err, user) {
             if(err) return console.error(err);
-                
+              //console.log(user.poll, "user")  
             if (user) {
                var newUser = user[0].poll;
                var results = [];
@@ -121,6 +121,39 @@ module.exports = function(user, path, form, forward) {
             }
         })
     }
+    
+    if(path === '/cast-vote') {
+        //console.log(user, path, form, "what tf")
+       /* 
+        User.findOneAndUpdate({"poll" : form.question})
+        .exec(function(err, user) {
+            if(err)return console.error(err);
+            console.log(user)
+        })
+       
+        User.find({}).select({"poll": 1, "question" : 1})
+        .exec(function(err, user) {
+            if(err) return console.error(err);
+            var poll = user[0].poll;
+            
+            for(var i = 0; i < poll.length; i++) {
+                console.log(poll[i].question)
+                if(poll[i].question === form.question) {
+                    var answers = poll[i].answers;
+                    answers.forEach(function(val, i) {
+                        if (answers[i].options === form.vote) {
+                            answers[i].votes += 1;
+                            return;
+                        }
+                        
+                    })
+                    
+                }
+            } */
+           forward("Your vote has been added!")
+      //  })
+    }
+   // forward("good");
     
 };
 /*

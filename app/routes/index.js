@@ -36,16 +36,21 @@ module.exports = function(app, passport) {
         .get( function(req, res) {
           res.sendFile(path + '/public/poll-vault.html');
         });
-    
+
     app.route('/poll-vault/:results')
-        .get(function(req, res) {
+        .post( function(req, res) {
             check(req.user, req.path, null, function(results) {
             //console.log("ctrl results", results )
             res.json(results);   
             });
-            
         });
-        
+    
+    app.route('/cast-vote')
+        .post( urlEncPar, function(req, res) {
+            check(req.query, req.path, req.body, function(results) {
+            res.send(results);
+            });
+        })
   
     app.route('/signup')
         .get(function(req, res) {
