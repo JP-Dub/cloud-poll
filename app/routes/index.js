@@ -1,7 +1,7 @@
 var path = process.cwd(),
     bP = require('body-parser'),
     urlEncPar = bP.urlencoded({extended: true}),
-    check = require('../controllers/dataController.server');
+    check = require('../controllers/serverData');
     //'./app/controllers/dataController.client');
 
 module.exports = function(app, passport) {
@@ -21,54 +21,66 @@ module.exports = function(app, passport) {
         });
         
     app.route('/poll-creation')
-        .get(isLoggedIn, function(req, res, next) {
+        .get( function(req, res, next) {
           res.sendFile(path + '/public/poll-creation.html'); 
         }); 
         
-    app.route('/poll-creation/:saved')    
-        .post(isLoggedIn, urlEncPar, function(req, res) {
-            check(req.user, req.path, req.body, function(results) {
-                res.redirect('/poll-creation');
-                });  
-        });
-  
     app.route('/poll-vault')
-        .get( function(req, res) {
+        .get(function(req, res) {
           res.sendFile(path + '/public/poll-vault.html');
         });
-
-    app.route('/poll-vault/:results')
-        .post( function(req, res) {
-            check(req.user, req.path, null, function(results) {
-            //console.log("ctrl results", results )
-            res.json(results);   
-            });
-        });
-    
-    app.route('/cast-vote')
-        .post( urlEncPar, function(req, res) {
-            check(req.query, req.path, req.body, function(results) {
-            res.send(results);
-            });
-        })
-  
+        
     app.route('/signup')
         .get(function(req, res) {
           res.sendFile(path + '/public/signup.html');
         });
-       
-    app.route('/signup/user')
+        
+    app.route('/poll-vault/:user')
+        .get(function(req, res) {
+            check(req.params.user, '/poll-vault/:user', null, function(results) {
+                //console.log(results)
+                res.json(results)
+            });
+        })
+
+    app.route('/poll/:results')
+        .get(function(req, res) {
+            if(!req.user) {
+                check(null, req.path, null, function(results) {
+                    res.json(results)  
+                });
+            } else {
+            res.json(req.user.poll)
+            }
+        })
         .post(urlEncPar, function(req, res) {
-            check(null, req.path, req.body, function(err, results) {
-                if (err) return res.json(err);
-                res.redirect(results);
+            check(req.user, req.path, req.body, function(results) {
+                res.json(results);   
+            });
+        }) //not currently implemented
+        .put(urlEncPar, function(req, res) {
+            console.log(".put is being called")
+            check(req.user, req.path, req.body, function(results) {
+                res.json(results);   
+            });
+        });
+       
+    app.route('/signup/:user')
+        .post(urlEncPar, function(req, res) {
+            check(null, req.path, req.body, function(results) {
+                res.json(results);
             }); 
         });
         
 	app.route('/api/:user')
 		.get(isLoggedIn, function (req, res) {
-		    console.log("called, api/:user")
-			res.json(req.user.github);
+		    if(req.user.signin.displayName) {
+		        var user = req.user.signin;
+		    } else
+		    if(req.user.github.displayName) {
+		        user = req.user.github;
+		    }
+		res.json(user);
 		});        
        
     app.route('/auth/github')
@@ -79,15 +91,66 @@ module.exports = function(app, passport) {
 			successRedirect: '/poll-creation',
 			failureRedirect: '/'
 		})); 
-		
-	app.route('/login')
-	    .post(passport.authenticate('local', { 
-	        successRedirect: '/poll-creation',
-	        failureRedirect: '/',
-	        failureFlash: true 
-	    }));
+	/*	
+	app.route('/auth/login')
+	    .post(urlEncPar, passport.authenticate('local', { 
+	        failureRedirect: '/'
+	    }), function(req, res) {
+	        res.redirect('/poll-creation');
+	    });
+      */  
+    app.route('/auth/login')
+        .post(urlEncPar, function(req, res, next) {
+            passport.authenticate('local', function(err, user, info) {
+                if(err) return next(err);
+                
+                if(!user) return res.json(info);
+                req.logIn(user, function(err) {
+                    if(err) return next(err);
+                    return res.redirect('/poll-creation');
+                });
+            }) (req, res, next);
+        });
         
+    app.route('/logout')
+        .get( function(req, res) {
+            req.logout();
+            res.redirect('/');
+        });
 };
+
+/*      
+    app.route('/poll-creation/:saved')    
+        .post( urlEncPar, function(req, res) {
+        //console.log("check it" , req.body)
+        check(req.user, req.path, req.body, function(results) {
+            console.log(results)
+            res.json(results)
+            });  
+        });
+*/
+
+
+/*        
+    app.route('/poll-creation/data')
+        .get( function(req, res) {
+         check(req.user, req.path, null, function(results) {
+            res.json(results)
+            })
+        }); 
+*/  
+
+/*    
+    app.route('/cast-vote')
+        .post(urlEncPar, function(req, res) {
+            console.log(req.body,"body", req.query, req.search )
+            check(req.query, req.path, req.body, function(results) {
+            res.json(results);
+            });
+        })
+*/  
+
+
 
  /* 
   app.get('/signin', function(req, res) {

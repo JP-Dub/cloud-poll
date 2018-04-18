@@ -8,7 +8,6 @@ var routes = require('./app/routes/index.js'),
     flash = require('req-flash'),
     app = express();
 
-
 require('dotenv').load();
 require('./app/config/passport')(passport);
 
@@ -25,10 +24,9 @@ app.use(session({
 	saveUninitialized: true
 }));
 
-
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(flash());
+app.use(flash()); // not in use;
 
 routes(app, passport);
 

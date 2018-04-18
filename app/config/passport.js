@@ -6,19 +6,19 @@ var GitHubStrategy = require('passport-github').Strategy,
     configAuth = require('./auth');
 
 module.exports = function (passport) {
-//	console.log(passport, "passport")
+	
 	passport.serializeUser(function (user, done) {
-	//	console.log(user, "user", user.id, "user.id")
+		//console.log(user, " user is serialized")
 		done(null, user.id);
 	});
 
 	passport.deserializeUser(function (id, done) {
 		User.findById(id, function (err, user) {
-		//	console.log(user, "deserializeUser")
+		  //console.log(user, " user has been deserialized")
 			done(err, user);
 		});
 	});
-
+	
 	passport.use(new GitHubStrategy({
 		clientID: configAuth.githubAuth.clientID,
 		clientSecret: configAuth.githubAuth.clientSecret,
@@ -28,11 +28,12 @@ module.exports = function (passport) {
 		process.nextTick(function () {
 			User.findOne({ 'github.id': profile.id }, function (err, user) {
 				if (err) return done(err);
-			//	console.log(user, "user", profile, "profile")
+				//console.log(user, "user")
 				if (user) {
-					//console.log(user)
+					console.log("user confirmed")
 					return done(null, user);
 				} else {
+					console.log("creating new user")
 					var newUser = new User();
 
 					newUser.github.id = profile.id;
@@ -47,25 +48,24 @@ module.exports = function (passport) {
 			});
 		});
 	}));
-	/*
-	 passport.use(new LocalStrategy(
+	
+	passport.use(new LocalStrategy(
         function(username, password, done) {
             User.findOne({ "signin.displayName" : username }, function(err, user) {
-                console.log(username, password)
-                if (err) { return done(err); }
+                if (err) return done(err); 
                 
                 if (!user) {
-                    return done(null, false, { message: 'Incorrect username.' });
+                    return done(null, false, { message: 'Username not found. Please return to previous page to re-try or sign-up for a new account.' });
                 }
                 
-                if (!user.validPassword(password)) {
-                    return done(null, false, { message: 'Incorrect password.' });
+                if (user.signin.password !== password) {
+                    return done(null, false, { message: 'Incorrect password. Please return to previous page to re-try.' });
                 }
                 
                 return done(null, user);
             });
         }
-    ));*/
+    ));
 };
 
 

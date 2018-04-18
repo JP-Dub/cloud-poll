@@ -1,46 +1,83 @@
-
-@media only screen and (min-height: 968px) {
+/*
+@media only screen and (max-width: 600px) {
   body {
-    height: 90vh;
+    background-color: lightblue;
+  }
+    
+  h1 {
+    font-size: 23px;/*6vw;
+  }
+  
+  h2 {
+    font-size: 2em/*3vw;
+  }
+  
+  p, li, label, td, input {
+    font-size: 12px;
+  }
+
+  sup, sub {
+    font-size: 1.5vmin;
   }
 }
-
-@media only screen and (orientation: landscape) {
-    body {
-        height: 50vh;
-    }
-  .container {
-  margin-top: 100px;
-  }
-}
-
+*/
 
 body {
   position: relative;
   font-family: georgia, helvetica, arial, sans-serif;
-  margin: 25px;
   margin-top: 0;
-  height: 100vh;
+  margin-left: 2.5vw;
+  margin-right: 2.5vw;
+  height: auto;
+  z-index: -2;/*-2;*/
+  padding-bottom: 3vmin;
   border: 1px solid white;
-  z-index: -2;
 }
 
-div {
-  height: 95%;
+h1 {
+  font-size: 6vmin;/*6vw;*/
+  margin-top: 5px;
+  font-weight: bold;
+  color: rgb(41, 137, 216);
+  color: rgba(41, 137, 216, 1);
+  text-shadow: 4px 2px 2px dimgrey;
 }
 
-p {
- font-size: 1.2vmax; 
+h2 {
+  font-size: 3vmin;/*3vw;*/
+  text-align: center;
+  color: rgb(41, 137, 216);
+  color: rgba(41, 137, 216, 1);
+}
+
+input, label, li, p, td, button {
+  font-size: 2vmin;
+}
+
+sub, sup {
+  font-size: 1.5vmin;
 }
 
 /* Navbar styling lines 38 - 60 */
+.navbar {
+  z-index: 4;
+  position: fixed;
+  left: 2.5%;
+  width: 95%;
+  height: 5vmin; /*2.8em*/
+  color: white;
+  /* Permalink - use to edit and share this gradient: 
+  http://colorzilla.com/gradient editor/#1e5799+20,2989d8+50,1e5799+80&0+0,0.8+15,1+19,1+81,0.8+85,0+100;Blue+Two+Sided+Transparent */
+  background: -moz-linear-gradient(top, rgba(30,87,153,0) 0%, rgba(30,87,153,0.8) 15%, rgba(30,87,153,1) 19%, rgba(30,87,153,1) 20%, rgba(41,137,216,1) 50%, rgba(30,87,153,1) 80%, rgba(30,87,153,1) 81%, rgba(30,87,153,0.8) 85%, rgba(30,87,153,0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(30,87,153,0) 0%,rgba(30,87,153,0.8) 15%,rgba(30,87,153,1) 19%,rgba(30,87,153,1) 20%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 80%,rgba(30,87,153,1) 81%,rgba(30,87,153,0.8) 85%,rgba(30,87,153,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(30,87,153,0) 0%,rgba(30,87,153,0.8) 15%,rgba(30,87,153,1) 19%,rgba(30,87,153,1) 20%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 80%,rgba(30,87,153,1) 81%,rgba(30,87,153,0.8) 85%,rgba(30,87,153,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
 
-nav {
-  position: relative;
-  top: 0;
-  width: 100%;
-  height: 3.5vmax;
-  vertical-align: middle;
+.navbar {
+  position: fixed;
+  left: 2.5%;
+  width: 95%;
+  height: 5vmin; /*2.8em*/
   color: white;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+20,2989d8+50,1e5799+80&0+0,0.8+15,1+19,1+81,0.8+85,0+100;Blue+Two+Sided+Transparent */
   background: -moz-linear-gradient(top, rgba(30,87,153,0) 0%, rgba(30,87,153,0.8) 15%, rgba(30,87,153,1) 19%, rgba(30,87,153,1) 20%, rgba(41,137,216,1) 50%, rgba(30,87,153,1) 80%, rgba(30,87,153,1) 81%, rgba(30,87,153,0.8) 85%, rgba(30,87,153,0) 100%); /* FF3.6-15 */
@@ -48,64 +85,34 @@ nav {
   background: linear-gradient(to bottom, rgba(30,87,153,0) 0%,rgba(30,87,153,0.8) 15%,rgba(30,87,153,1) 19%,rgba(30,87,153,1) 20%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 80%,rgba(30,87,153,1) 81%,rgba(30,87,153,0.8) 85%,rgba(30,87,153,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
-nav p {
+.nav-wrapper{
   position: absolute;
-  top: 50%;
-  margin-top: -.8vmax;
-}
-/*
-nav p {
-  display: inline-block; 
-  margin-left: 12.5%;
-  margin-right: 12.5%;
-  border: 1px solid purple;
-  width: auto;
-}
-*/
-
-.navbar {
-  position: relative;
-  width: 75%;
-  margin: auto;
+  margin-top: -.5em;
+  margin-left:10%;
+  width: 80%;
 }
 
 .navbar-left {
-  left: 0;
+  float: left;
+  width: 20%;
   text-align: left;
- 
+  
 }
 
 .navbar-center {
+  display: inline-block;
   text-align: center;
-  width: 25vmin;
-  left: 50%;
-  margin-left: -125px;
-  color: lime;
+  width: 60%;
 }
 
 .navbar-right {
-  right: 0;
+  float: right;
+  width: 20%;
   text-align: right;
 }
 
-/* Background template styling and main header lines 66 - 117 */
-
-#top-header {
-  left: 50%;
-  position: relative; /* absolute
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;*/
-  margin-left: -225px; /*-215px*/
-  margin-top: 20px;
-  width: 400px;
-  height: 180px;
-  box-shadow: 26px 26px 8px #595959;
-}
-
 .container {
-  border: 6px outset lightgrey; 
+  border: .9vmin outset lightgrey; /*6px*/
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+6,dedede+19,d2d2d2+22,ededed+39,d6d6d6+50,dedede+58,c4c4c4+67,d6d6d6+83,d6d6d6+83,ededed+90 */
   background: rgb(255,255,255); /* Old browsers */
   background: -moz-linear-gradient(45deg, rgba(255,255,255,1) 6%, rgba(222,222,222,1) 19%, rgba(210,210,210,1) 22%, rgba(237,237,237,1) 39%, rgba(214,214,214,1) 50%, rgba(222,222,222,1) 58%, rgba(196,196,196,1) 67%, rgba(214,214,214,1) 83%, rgba(214,214,214,1) 83%, rgba(237,237,237,1) 90%); /* FF3.6-15 */
@@ -114,381 +121,184 @@ nav p {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
-header {
+header{
   text-align: center;
-}
-
-h1 {
-  margin-top: 5px;
-  font-size: 60px;
-  font-weight: bold;
-  color: rgba(41,137,216,1) ;
-  text-shadow: 4px 2px 2px dimgrey;
 }
 
 main {
-  margin-top: -35px;
+  margin-top: -3.5vmin;/*-35px;*/
   margin-left: auto;
   margin-right: auto;
-  border-top: 6px double white;
+  border-top: .6vmin double white; /*6px*/
   position: relative;
   text-align: center;
-  width: 300px;
+  width: 30vmin;/*300px;*/
   height: auto; /*75px*/
+  cursor: default;
 }
 
 main p{  /*:nth-child(1)*/
-  margin-top: 10px;
-  font-size: 18px;  /*22px*/
+  margin-top: 1vmin;/*10px;*/
 }
-
-/* Login header styling and position */
-
-#login-header {
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 35px;
-  width: 400px;
-  height: 285px;
-  /*box-shadow: 16px 16px 4px #595959;*/
-  box-shadow: 8px 8px 2px #595959;
-}
-
-#signin-header {
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 15px;
-  width: 400px;
-  height: 250px;
-  /*box-shadow: 16px 16px 4px #595959;*/
-  box-shadow: 8px 8px 2px #595959;
-}
-
-#signup-header {
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 35px;
-  width: 400px;
-  height: 330px;
-  /*box-shadow: 16px 16px 4px #595959;*/
-  box-shadow: 8px 8px 2px #595959;
-}
-
-button {
-  z-index: 1;
-  margin-top: 12px;
-  height: 50px;
-  width: 220px;
-  color: white;
-  border-radius: 8px;
-  background-color: #8c8c8c;
-  border: 1px solid white;
-  box-shadow: inset -4px -4px 26px 6px #4d4d4d;
-  cursor: pointer; 
-}
-
-button img {
-  float: left;
-  margin-top: 8px;
-  margin-left: 5px;
-  border-radius: 30px;
-}
-
-button p {
-  font-size: 16px;
-  margin-top: 15px;
-}
-
-button:hover {
-  background-color: rgba(41,137,216,1);
-  box-shadow: inset -4px -4px 26px 4px #1c5f97;
-}
-
-button:active {
-  box-shadow: none;
-}
-
-form {
-  margin-top: 10px;
-  margin-left: 20px;
-  text-align: left;
-}
-
-form button {
-  margin-left:18px;
-  font-size: 16px;
-}
-
-#signupResponse {
-  margin-top: 45px;
-  color: blue;
-  text-align: center;
-}
-
-/* Footer bar styling lines 176 - 188 */
 
 footer {
-  position: absolute;
-  width: 100%;
   bottom: 0;
   text-align: center;
-  vertical-align: middle;
-  color: white;
-
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+20,2989d8+50,1e5799+80&0+0,0.8+15,1+19,1+81,0.8+85,0+100;Blue+Two+Sided+Transparent */
-  background: -moz-linear-gradient(top, rgba(30,87,153,0) 0%, rgba(30,87,153,0.8) 15%, rgba(30,87,153,1) 19%, rgba(30,87,153,1) 20%, rgba(41,137,216,1) 50%, rgba(30,87,153,1) 80%, rgba(30,87,153,1) 81%, rgba(30,87,153,0.8) 85%, rgba(30,87,153,0) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, rgba(30,87,153,0) 0%,rgba(30,87,153,0.8) 15%,rgba(30,87,153,1) 19%,rgba(30,87,153,1) 20%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 80%,rgba(30,87,153,1) 81%,rgba(30,87,153,0.8) 85%,rgba(30,87,153,0) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, rgba(30,87,153,0) 0%,rgba(30,87,153,0.8) 15%,rgba(30,87,153,1) 19%,rgba(30,87,153,1) 20%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 80%,rgba(30,87,153,1) 81%,rgba(30,87,153,0.8) 85%,rgba(30,87,153,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  z-index: 4;
 }
 
-/* unvisited link */
-a:link {
-    color: white;
+footer p {
+  margin-top: .7em;
 }
-
-/* visited link */
-a:visited {
-    color: lime;
-}
-
-/* mouse over link */
-a:hover {
-    color: hotpink;
-}
-
-/* selected link */
-a:active {
-    color: blue;
-}
-
 
 /* POLL-CREATION STYLING */
-#poll-crea-ques-form {
-  margin-top: 20px;
+#edit {
+  width: auto;/*46vmin; /*400px;*/
+  height: 18vmin;/*200px;*/
+  border: inset 6px white; /*6px white;*/
+  background: rgb(255,255,255); /* Old browsers */
+  background: -moz-linear-gradient(45deg, rgba(255,255,255,1) 6%, rgba(222,222,222,1) 19%, rgba(210,210,210,1) 22%, rgba(237,237,237,1) 39%, rgba(214,214,214,1) 50%, rgba(222,222,222,1) 58%, rgba(196,196,196,1) 67%, rgba(214,214,214,1) 83%, rgba(214,214,214,1) 83%, rgba(237,237,237,1) 90%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, rgba(255,255,255,1) 6%,rgba(222,222,222,1) 19%,rgba(210,210,210,1) 22%,rgba(237,237,237,1) 39%,rgba(214,214,214,1) 50%,rgba(222,222,222,1) 58%,rgba(196,196,196,1) 67%,rgba(214,214,214,1) 83%,rgba(214,214,214,1) 83%,rgba(237,237,237,1) 90%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, rgba(255,255,255,1) 6%,rgba(222,222,222,1) 19%,rgba(210,210,210,1) 22%,rgba(237,237,237,1) 39%,rgba(214,214,214,1) 50%,rgba(222,222,222,1) 58%,rgba(196,196,196,1) 67%,rgba(214,214,214,1) 83%,rgba(214,214,214,1) 83%,rgba(237,237,237,1) 90%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  overflow: auto;
+}
+
+#list {
+  margin-top: 2px;
+}
+
+#creation-form {
+  margin-top: 10px;
+  margin-left: 0;
   text-align: center;
 }
 
 #ques-header {
-  position: relative; /* absolute
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  right: 0;
-  margin: auto;*/
-  left: 50%;
-  margin-left: -325px;
-  margin-top: 20px;
-  width: 600px;
-  height: 180px;
-  box-shadow: 26px 26px 8px #595959;
+  position: relative; 
+  /*left: 50%;*/
+  margin-top: 6vmin;
+  /*margin-left: -325px;*/
+  margin-left: auto;
+  margin-right: auto;
+  width: 56vmin;/*600px;*/
+  height: auto; /*38vmin;/*380px;*/
+  box-shadow: 2vmin 2vmin 1vmin #595959; /*26px 26px 8px #595959;*/
+}
+
+#ques-header header {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 45vmin;
+  cursor: default;
+}
+
+#ques-header:hover {
+  cursor: crosshair;
+}
+
+.hint {
+  position: relative;
+  /*width: 400px;*/
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  text-align: center;
 }
 
 .questions {
   padding-top: 5px;
-  width: 400px;
+  width: 47vmin; /*400px;*/
 }
 
 #choice-header {
   position: relative;
-  /*left: 50%;*/
   margin-left: auto; /*-295px*/
   margin-right: auto;
-  margin-top: 35px;
-  width: 600px;
+  margin-top: 3vmin; /*35px;*/
+  width: auto;/*65vmin; /*600px;*/
   height: auto;
-  box-shadow: 8px 8px 2px #595959;/*16px 16px 4px #595959;*/
+  /*overflow: auto;*/
+  /*box-shadow: 1.2vmin 1.2vmin .1vmin #595959 /*8px 8px 2px #595959;/*16px 16px 4px #595959;*/
 }
 
 .choices {
-  width: 400px;
-  height: auto;
+  width: 46vmin; /*400px;*/
+  margin-left: auto;
+  margin-right: auto;
+  /*height: auto;*/
+  
+}
+
+#btn-container {
+  position: relative;
+  padding-top: 1.2vmin; /*10px;*/
+  margin-left: auto;
+  margin-right: auto;
+  /*height: auto;*/
+  width: auto; /*65vmin; /*400px;*/
+}
+.btn-wrapper {
+  width: 65vmin;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#submit-btn, #options-btn, #delete-btn, #update-btn {
+  display: inline-block;
+  width: 15.5vmin; /*150px;*/
+}
+
+#submit-btn {
+  z-index: 1;
+  margin-top: 1.4vmin; /*12px;*/
+}
+
+#options-btn {
+ /* font-family: Arial;*/
+  z-index: 2;
 }
 
 ol li {
-  margin-left: 45px;
+  margin-left: -10px; /*45px*/
   text-align: justify;
 }
 
 ol input {
   border: 1px solid dimgray;
   text-align: left;
-  margin-left: -40px;
+  margin-left: 5px; /*-40px*/
 }
 
-#submit-btn {
-  font-size: 16px;
-  z-index: 1;
-  margin-top: 12px;
-  margin-left: auto;
-  margin-right: auto;
-  height: 50px;
-  width: 220px;
-  color: white;
-  border-radius: 8px;
-  background-color: #8c8c8c;
-  border: 1px solid white;
-  box-shadow: inset -4px -4px 26px 6px #4d4d4d;
-  cursor: pointer; 
-}
-
-#submit-btn:hover {
-  background-color: rgba(41,137,216,1);
-  box-shadow: inset -4px -4px 26px 4px #1c5f97;
-}
-
-#submit-btn:active {
-  box-shadow: none;
-}
-
-#options-btn p {
-margin-top: 16px;
-}
-
-#options-btn {
-  font-family: Arial;
-  z-index: 2;
-  margin-left: auto;
-  margin-right: auto;
-  height: 50px;
-  width: 220px;
-  color: white;
-  border-radius: 8px;
-  background-color: #8c8c8c;
-  border: 1px solid white;
-  box-shadow: inset -4px -4px 26px 6px #4d4d4d;
-  cursor: pointer; 
-}
-
-#options-btn:hover {
-  background-color: rgba(41,137,216,1);
-  box-shadow: inset -4px -4px 26px 4px #1c5f97;
-}
-
-#options-btn:active {
-  box-shadow: none;
-}
-
-#options-btn p {
- font-size: 16px;
-}
-
-/* POLL-VAULT STYLING */
-#vault-header {
-  left: 50%;
-  position: relative; /* absolute
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;*/
-  margin-left: -225px; /*-215px*/
-  margin-top: 10px;
-  width: 400px;
-  height: 180px;
-  box-shadow: 26px 26px 8px #595959;
-  cursor: pointer;
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none;
-}
-
-#vault-header:active {
-  box-shadow: 16px 16px 6px #595959;
-  transform: translate(6px, 6px);
-}
-
-#poll-vault {
-  margin-top: 35px;
-  width: auto;
-  height: 75%; 
-  padding: 20px;
-}
-
-h2 {
-  text-align: center;
-  color: rgba(41,137,216,1);
-}
-
-.left article {
-  /*margin-left: 30px;*/
-  text-align: center;
-}
-
-.right article {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
-.left {
-  box-sizing: border-box;
-  position: absolute;
-  box-shadow: inset 0px 0px 28px 5px black;
-  width: 47%;
-  height: 60%;
-  right: 50%;
-  margin-right: 15px;
-  border: 1px solid black;
-  overflow: auto;
-}
-
-.right {
-  box-sizing: border-box;
-  position: absolute;
-  box-shadow: inset 0px 0px 28px 5px black;
-  width: 47%;
-  height: 60%;
-  left: 50%;
-  margin-left: 15px;
-  border: 1px solid black;
-  overflow: auto;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-  /*border: 1px solid white;*/
-}
-
-ul li {
-  font-size: 1.2vmax;
+ li {
   padding: 4px 8px;
-  /*border-bottom: 1px solid white;*/
 }
 
-ul li:last-child {
-  /*border-bottom: none;*/
-}
-
-ul li a {
+ li a {
   text-decoration: none;
 }
-
+/*
 /* unvisited link */
-ul li a:link {
+ li a:link {
   color: black;
 }
 
 /* visited link */
-ul li a:visited {
+ li a:visited {
   color: black;
 }
 
-/* mouse over link */
-ul li a:hover {
+li a:hover {
   color: hotpink;
 }
 
 /* selected link */
-ul li a:focus {
+li a:focus {
+  color: rgb(41, 137, 216);  
   color: rgba(41,137,216,1);
 }
-
+/*
 #postResults {
   margin-top: 20px;
   margin-left: auto;
@@ -501,35 +311,144 @@ ul li a:focus {
   margin-left: 25px;
 }
 
-.voterSpace {
+/* POLL-CREATION STYLING END */
+
+/* POLL-VAULT STYLING */
+
+select {
+  font-size: 1.65vmin;
+  border-radius: .5em;
+  color: rgb(41, 137, 216);
+  color: rgba(41, 137, 216, 1);
+}
+
+#vault-header {
+  position: relative; 
+  left: 50%;
+  margin-top: 6vmin;/*3.5em;*/
+  margin-left: -21vmin; /*-14.06em; -22.8vmin; -225px; -22.5%*/
+  width: 40vmin;/* 25em or 400px;*/
+  height: auto;/*18vmin; /*11.25em or 180px;*/
+  box-shadow: 2vmin 2vmin 1vmin #595959;/*1.625em 1.625em .5em; 26px 26px 8px*/
+  cursor: pointer;
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
+}
+
+#vault-header:active {
+  box-shadow: 1vmin 1vmin .375vmin #595959;/*16px 16px 6px*/
+  transform: translate(.375vmin, .375vmin); /*.375vem; 6px;*/
+}
+
+#poll-vault {
+  margin-top: 3vmin; /*2.187em; 35px;*/
+  width: auto;
+  height: auto; /*70%*/
+  padding: 2.5vmin; /*1.25em; 20px;*/
+}
+
+.content {
   position: relative;
-  width: 400px;
-  height: 20px;
-  margin: auto;
+  margin-left: 0;
+  width: 100%;
 }
 
-.leftSpace {
-  position: absolute;
-  left: 50px;
-  text-align: left;
-}
-
-.centerSpace {
-  position: absolute;
+.left article {
   text-align: center;
+}
+
+.right article {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+div.left, div.right {
+  box-sizing: border-box;
+  position: absolute;
+  border: 1px solid black;
+  width: 48.5%;
+  height: 100%;
+  overflow: auto;
+}
+
+.left {
+  box-shadow: inset -.2vmin .2vmin 1.2vmin .4vmin #595959;/*-2px 2px 28px 5px black;*/
+  border-radius: 0 10px 10px 0; 
+  margin-right: 10px;
+  right: 50%;
+}
+
+.right {
+  box-shadow: inset -.2vmin .2vmin 1.2vmin .4vmin #595959;;
+  border-radius: 10px 0 0 10px;
+  /*padding-right: 25px;*/
+  margin-left: 10px;
   left: 50%;
 }
 
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* unvisited link */
+li a:link {
+  color: black;
+}
+
+/* visited link */
+li a:visited {
+  color: black;
+}
+
+li a:hover {
+  color: hotpink;
+}
+
+/* selected link */
+li a:focus {
+  color: rgb(41, 137, 21);
+  color: rgba(41, 137, 216, 1);
+}
+  
+/* #vaultChoices styling for questions/options/votes/charts */
+.voterSpace {
+  position: relative;
+  width: 38vmin;/*40vmin; /*400px;*/
+  margin-left: auto;
+  margin-right: auto;
+  /*left: 50%;*/
+  /*margin-left: -20vmin;*/
+}
+
+th, td {
+  padding: 5px;
+}
+
+.leftSpace {
+  text-align: left;
+  width: 45%;
+}
+
+.centerSpace {
+  text-align: center;
+}
+
 .rightSpace {
-  position: absolute;
-  right: 50px;
   text-align: right;
+  width: 45%;
 }
  
 #myChart {
-  margin-top: 10px;
-  z-index: 2;
-
+  margin-top: 1.5vmin;
+  margin-left: auto;/*15px;*/
+  margin-right: auto;
+  /*z-index: 2;*/
 }
 
 #centerSp {
@@ -537,76 +456,173 @@ ul li a:focus {
 }
 
 #voterBtn {
-  width: 100px;
-  height: 30px;
+  /*font-size: 2vmin;*/
+  width: 10vmin; /*150px;*/
+  height: 3.5vmin; /*30px;*/
   padding: 0;
   margin: 0;
 }
 
+/* POLL-VAULT STYLING END */
 
-/*
-#submit {
-  position: absolute;
-  width: 75px;
-  height: 30px;
-  margin-top: -8px;
-  margin-left: 0;
-}
+/* POLL-SIGNUP STYLING */
 
-#options {
-  position: absolute;
-  width: 150px;
-  height: 30px;
+#top-header {
+  position: relative; 
   left: 50%;
-  margin-top: -8px;
-  margin-left: -75px;
-}*/
-
-/*.container {
-
-  margin-top: 4vmax;
-  margin-left: auto;
-  margin-right: auto;
-  height: 90%;
-  border: 1px solid lime;
+  margin-top: 6vmin;/*3.5em;*/
+  margin-left: -21vmin; /*-14.06em; -21vmin; -225px; -22.5%*/
+  /*min-width: 200px;
+  min-height: 90px;*/
+  width: 40vmin;/* 25em or 400px;*/
+  height: auto;/*15vmin; /*11.25em or 180px;*/
+  /*max-width: 800px;
+  max-height: 360px;*/
+  box-shadow: 2vmin 2vmin 1vmin #595959;
 }
 
-header p {
-  margin-top: -3vmax;
-}
-
-main {
-  margin-left: auto;
-  margin-right: auto;
-  border-top: 1px solid lightgrey;
+/* Login header styling and position */
+#login-header, #signin-header, #signup-header {
   position: relative;
-  text-align: center;
-  height: 86%;
-  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  /*min-width: 250px;*/
+  width: 50vmin;
+  /*max-width: 900px;*/
+  box-shadow: 1.2vmin 1.2vmin .1vmin #595959;
+} 
+
+#login-header {
+  margin-top: 3vmin; /*35px;*/
+  min-height: 157.5px;
+  height: 25vmin;/*285px;*/
+  /*max-height: 427.5px;*/
 }
 
-main p:nth-child(1){ 
-  padding-top: 4vmin;
-  font-size: 1.2vmax; 
+#signin-header {
+  height: auto;/*21vmin;/*250px;*/
+  margin-top: -24.25vmin; /*-25.75vmin*/
+  z-index : -3;
+  border-top: 0;
+  box-shadow: 0 0 0 #595959;
 }
-;*/
 
-/*
-.login {
- padding-top: 4vmin; 
-}*/
+#signin-header main {
+  border-top: 1px solid lightgrey;
+  height: auto;
+}
 
+#signup-header {
+  margin-top: 3vmin;/*35px;*/
+  /*height: 37.5vmin;/*330px;  */
+}
 
+img {
+  height: 3.8vmin;
+  width: 3.8vmin;
+  float: left;
+  margin-top: .35vmin;/*8px;*/
+  margin-left: .4vmin;/*5px;*/
+  border-radius: 2.5vmin;/*30px;*/
+}
 
-/*
-.inset {
-  z-index: -1;
-  position: absolute;
-  width: 224px;
-  height: 54px;
-  border-radius: 5px;
-  margin-top: 10px;
-  margin-left: 40px;
+button {
+  z-index: 1;
+  margin-top: 1.5vmin;/*12px;*/
+  height: 5.5vmin;/*50px;*/
+  width: 26vmin;/*220px;*/
+  color: white;
+  border-radius: 1.2vmin;/*8px;*/
+  background-color: #8c8c8c;
   border: 1px solid white;
-  background-color: lime;
-}*/
+  box-shadow: inset -4px -4px 26px 6px #4d4d4d;
+  cursor: pointer; 
+  outline: none;
+}
+
+button:hover {
+  background-color: rgb(41, 137, 216);
+  background-color: rgba(41, 137, 216, 1);
+  box-shadow: inset -4px -4px 26px 4px #1c5f97;
+}
+
+button:active {
+  box-shadow: none;
+}
+
+button p {
+  margin-top: 1.5vmin;/*15px;*/
+}
+
+#github-btn, #account-btn {
+  margin-top: 2.5vmin;/*12px;*/
+  height: 5vmin;/*50px;*/
+  width: 18vmin;/*220px;*/
+}
+
+#account-btn, #signin-btn {
+  margin-top: 1.5vmin;/*12px;*/
+  /*height: 5vmin;/*50px;
+  width: 18vmin;/*220px;*/
+}
+
+#signin-btn, #register {
+  width: 30vmin;/*220px;*/
+  height: 5vmin;
+}
+
+#register {
+  margin-top: 1.5vmin;
+}
+
+form {
+  padding-top: 1vmin;
+  margin-top: 1vmin;/*10px;*/
+  margin-left: 0; /*20px;*/
+  text-align: left;
+}
+
+#form {
+    border-top: .6vmin double white; 
+}
+
+#regform {
+  margin-top: 0;
+}
+
+.input {
+  width: 29.5vmin; 
+  height: 2vmin;
+  background-color: white;
+  text-indent: 5px;
+}
+
+input:focus {
+  background-color: #ccffcc;
+}
+
+#signupResponse {
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 6vmin; /*45px;*/
+  color: blue;
+  text-align: center;
+}
+
+/* POLL-SIGNUP STYLING END */
+
+a:link {
+    color: white;
+}
+
+a:visited {
+    color: lime;
+}
+
+a:hover {
+    color: hotpink;
+}
+
+a:active {
+    color: blue;
+}

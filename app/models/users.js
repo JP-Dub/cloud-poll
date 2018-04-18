@@ -32,6 +32,8 @@ var User = new Schema({
       }]
   }]           
 });
+
+User.set( 'toObject', {retainKeyOrder: true});
    
 module.exports = mongoose.model('User', User);
 
