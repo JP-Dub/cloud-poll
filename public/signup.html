@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/public/css/style.css"> 
   </head>
   <body>
+    
     <nav class="navbar">
 	    <div class="nav-wrapper">
 		    <p class="navbar-left"><a href="/" title="Home Page">Cloud Poll</a></p>
@@ -23,14 +24,14 @@
       <main>   
         <p><em>Create an account to create and modify your polls!</em></p> 
       </main>
-    </div> <!-- end of div .container -->
+    </div>
     
     <div id="signup-header" class="container">
       <header>
         <h1>Sign Up</h1>
       </header>
       <main>
-        <form id="regform" method="post" enctype="multipart/form-data"><!-- action="/signup/user" enctype="multipart/form-data"-->
+        <form id="regform" method="post" enctype="multipart/form-data">
           <label>Name / Display Name:</label><br>
           <input class="input" title="Name is case-sensitive and required for signin" type="text" autocomplete="username" name="displayname" required size="32"><br>
           <label>Email: <span style="font-size:1.4vmin"><em>(optional)</em></span></label><br>
@@ -41,7 +42,7 @@
           <input class="input" title="Please confirm your password" type="password" name="confirm" required size="32"><br>
           <button id ="register" type="submit" value="Sign Up"><p>Sign Up</p></button>
         </form>
-        <p id="signupResponse"><em></em></p>
+        <!--<p id="signupResponse"><em></em></p>-->
       </main>
     </div>
    

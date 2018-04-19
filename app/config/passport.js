@@ -8,13 +8,11 @@ var GitHubStrategy = require('passport-github').Strategy,
 module.exports = function (passport) {
 	
 	passport.serializeUser(function (user, done) {
-		//console.log(user, " user is serialized")
 		done(null, user.id);
 	});
 
 	passport.deserializeUser(function (id, done) {
 		User.findById(id, function (err, user) {
-		  //console.log(user, " user has been deserialized")
 			done(err, user);
 		});
 	});
@@ -26,7 +24,7 @@ module.exports = function (passport) {
 	},
 	function (token, refreshToken, profile, done) {
 		process.nextTick(function () {
-			User.findOne({ 'github.id': profile.id }, function (err, user) {
+			User.findOne({ 'signin.id': profile.id }, function (err, user) {
 				if (err) return done(err);
 				//console.log(user, "user")
 				if (user) {
@@ -35,10 +33,11 @@ module.exports = function (passport) {
 				} else {
 					console.log("creating new user")
 					var newUser = new User();
-
-					newUser.github.id = profile.id;
-					newUser.github.username = profile.username;
-					newUser.github.displayName = profile.displayName;
+					
+					newUser.date.time =  new Date(Date.now()).toString();
+					newUser.signin.account = "Github";
+					newUser.signin.id = profile.id;
+					newUser.signin.displayName = profile.displayName;
 
 					newUser.save(function (err) {
 						if (err) return console.error(err);
@@ -72,29 +71,28 @@ module.exports = function (passport) {
 
 
 /*
-local strategy for signed up users
-passport.use(new LocalStrategy({
-    usernameField: 'email',
-    passwordField: 'passwd'
-  },
-  function(username, password, done) {
-    // ...
-  }
-));
+	function (token, refreshToken, profile, done) {
+		process.nextTick(function () {
+			User.findOne({ 'github.id': profile.id }, function (err, user) {
+				if (err) return done(err);
+				//console.log(user, "user")
+				if (user) {
+					console.log("user confirmed")
+					return done(null, user);
+				} else {
+					console.log("creating new user")
+					var newUser = new User();
 
+					newUser.github.id = profile.id;
+					newUser.github.username = profile.username;
+					newUser.github.displayName = profile.displayName;
 
-passport.use(new LocalStrategy(
-  function(username, password, done) {
-    User.findOne({ username: username }, function(err, user) {
-      if (err) { return done(err); }
-      if (!user) {
-        return done(null, false, { message: 'Incorrect username.' });
-      }
-      if (!user.validPassword(password)) {
-        return done(null, false, { message: 'Incorrect password.' });
-      }
-      return done(null, user);
-    });
-  }
-));
+					newUser.save(function (err) {
+						if (err) return console.error(err);
+						return done(null, newUser);
+					});
+				}
+			});
+		});
+	}));
 */

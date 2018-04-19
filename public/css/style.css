@@ -1,30 +1,6 @@
-/*
-@media only screen and (max-width: 600px) {
-  body {
-    background-color: lightblue;
-  }
-    
-  h1 {
-    font-size: 23px;/*6vw;
-  }
-  
-  h2 {
-    font-size: 2em/*3vw;
-  }
-  
-  p, li, label, td, input {
-    font-size: 12px;
-  }
-
-  sup, sub {
-    font-size: 1.5vmin;
-  }
-}
-*/
-
 body {
   position: relative;
-  font-family: georgia, helvetica, arial, sans-serif;
+  font-family: Georgia, Helvetica, arial, sans-serif;
   margin-top: 0;
   margin-left: 2.5vw;
   margin-right: 2.5vw;
@@ -58,7 +34,7 @@ sub, sup {
   font-size: 1.5vmin;
 }
 
-/* Navbar styling lines 38 - 60 */
+/* Navbar styling lines */
 .navbar {
   z-index: 4;
   position: fixed;
@@ -66,10 +42,11 @@ sub, sup {
   width: 95%;
   height: 5vmin; /*2.8em*/
   color: white;
-  /* Permalink - use to edit and share this gradient: 
-  http://colorzilla.com/gradient editor/#1e5799+20,2989d8+50,1e5799+80&0+0,0.8+15,1+19,1+81,0.8+85,0+100;Blue+Two+Sided+Transparent */
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient editor/#1e5799+20,2989d8+50,1e5799+80&0+0,0.8+15,1+19,1+81,0.8+85,0+100;Blue+Two+Sided+Transparent */
   background: -moz-linear-gradient(top, rgba(30,87,153,0) 0%, rgba(30,87,153,0.8) 15%, rgba(30,87,153,1) 19%, rgba(30,87,153,1) 20%, rgba(41,137,216,1) 50%, rgba(30,87,153,1) 80%, rgba(30,87,153,1) 81%, rgba(30,87,153,0.8) 85%, rgba(30,87,153,0) 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(top, rgba(30,87,153,0) 0%,rgba(30,87,153,0.8) 15%,rgba(30,87,153,1) 19%,rgba(30,87,153,1) 20%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 80%,rgba(30,87,153,1) 81%,rgba(30,87,153,0.8) 85%,rgba(30,87,153,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(top, rgba(30,87,153,0) 0%,rgba(30,87,153,0.8) 15%,rgba(30,87,153,1) 19%,rgba(30,87,153,1) 20%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 80%,rgba(30,87,153,1) 81%,rgba(30,87,153,0.8) 85%,rgba(30,87,153,0) 100%); /* Old Webkit*/
+  background: -o-linear-gradient(top, rgba(30,87,153,0) 0%,rgba(30,87,153,0.8) 15%,rgba(30,87,153,1) 19%,rgba(30,87,153,1) 20%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 80%,rgba(30,87,153,1) 81%,rgba(30,87,153,0.8) 85%,rgba(30,87,153,0) 100%); /* Opera 11.1+*/
   background: linear-gradient(to bottom, rgba(30,87,153,0) 0%,rgba(30,87,153,0.8) 15%,rgba(30,87,153,1) 19%,rgba(30,87,153,1) 20%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 80%,rgba(30,87,153,1) 81%,rgba(30,87,153,0.8) 85%,rgba(30,87,153,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
@@ -79,9 +56,10 @@ sub, sup {
   width: 95%;
   height: 5vmin; /*2.8em*/
   color: white;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+20,2989d8+50,1e5799+80&0+0,0.8+15,1+19,1+81,0.8+85,0+100;Blue+Two+Sided+Transparent */
   background: -moz-linear-gradient(top, rgba(30,87,153,0) 0%, rgba(30,87,153,0.8) 15%, rgba(30,87,153,1) 19%, rgba(30,87,153,1) 20%, rgba(41,137,216,1) 50%, rgba(30,87,153,1) 80%, rgba(30,87,153,1) 81%, rgba(30,87,153,0.8) 85%, rgba(30,87,153,0) 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(top, rgba(30,87,153,0) 0%,rgba(30,87,153,0.8) 15%,rgba(30,87,153,1) 19%,rgba(30,87,153,1) 20%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 80%,rgba(30,87,153,1) 81%,rgba(30,87,153,0.8) 85%,rgba(30,87,153,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(top, rgba(30,87,153,0) 0%,rgba(30,87,153,0.8) 15%,rgba(30,87,153,1) 19%,rgba(30,87,153,1) 20%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 80%,rgba(30,87,153,1) 81%,rgba(30,87,153,0.8) 85%,rgba(30,87,153,0) 100%); /* Old Webkit*/
+  background: -o-linear-gradient(top, rgba(30,87,153,0) 0%,rgba(30,87,153,0.8) 15%,rgba(30,87,153,1) 19%,rgba(30,87,153,1) 20%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 80%,rgba(30,87,153,1) 81%,rgba(30,87,153,0.8) 85%,rgba(30,87,153,0) 100%); /* Opera 11.1+*/
   background: linear-gradient(to bottom, rgba(30,87,153,0) 0%,rgba(30,87,153,0.8) 15%,rgba(30,87,153,1) 19%,rgba(30,87,153,1) 20%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 80%,rgba(30,87,153,1) 81%,rgba(30,87,153,0.8) 85%,rgba(30,87,153,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
@@ -94,20 +72,19 @@ sub, sup {
 
 .navbar-left {
   float: left;
-  width: 20%;
+  width: 30%;
   text-align: left;
-  
 }
 
 .navbar-center {
   display: inline-block;
   text-align: center;
-  width: 60%;
+  width: 40%;
 }
 
 .navbar-right {
   float: right;
-  width: 20%;
+  width: 30%;
   text-align: right;
 }
 
@@ -115,9 +92,11 @@ sub, sup {
   border: .9vmin outset lightgrey; /*6px*/
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+6,dedede+19,d2d2d2+22,ededed+39,d6d6d6+50,dedede+58,c4c4c4+67,d6d6d6+83,d6d6d6+83,ededed+90 */
   background: rgb(255,255,255); /* Old browsers */
-  background: -moz-linear-gradient(45deg, rgba(255,255,255,1) 6%, rgba(222,222,222,1) 19%, rgba(210,210,210,1) 22%, rgba(237,237,237,1) 39%, rgba(214,214,214,1) 50%, rgba(222,222,222,1) 58%, rgba(196,196,196,1) 67%, rgba(214,214,214,1) 83%, rgba(214,214,214,1) 83%, rgba(237,237,237,1) 90%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(45deg, rgba(255,255,255,1) 6%,rgba(222,222,222,1) 19%,rgba(210,210,210,1) 22%,rgba(237,237,237,1) 39%,rgba(214,214,214,1) 50%,rgba(222,222,222,1) 58%,rgba(196,196,196,1) 67%,rgba(214,214,214,1) 83%,rgba(214,214,214,1) 83%,rgba(237,237,237,1) 90%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(45deg, rgba(255,255,255,1) 6%,rgba(222,222,222,1) 19%,rgba(210,210,210,1) 22%,rgba(237,237,237,1) 39%,rgba(214,214,214,1) 50%,rgba(222,222,222,1) 58%,rgba(196,196,196,1) 67%,rgba(214,214,214,1) 83%,rgba(214,214,214,1) 83%,rgba(237,237,237,1) 90%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: -webkit-linear-gradient(45deg, rgba(255,255,255,1) 6%,rgba(222,222,222,1) 19%,rgba(210,210,210,1) 22%,rgba(237,237,237,1) 39%,rgba(214,214,214,1) 50%,rgba(222,222,222,1) 58%,rgba(196,196,196,1) 67%,rgba(214,214,214,1) 83%,rgba(214,214,214,1) 83%,rgba(237,237,237,1) 90%); /* Chrome10-25, Safari5.1-6 */
+  background: -moz-linear-gradient(45deg, rgba(255,255,255,1) 6%, rgba(222,222,222,1) 19%, rgba(210,210,210,1) 22%, rgba(237,237,237,1) 39%, rgba(214,214,214,1) 50%, rgba(222,222,222,1) 58%, rgba(196,196,196,1) 67%, rgba(214,214,214,1) 83%, rgba(214,214,214,1) 83%, rgba(237,237,237,1) 90%); /* FF 3.6-15 */
+  background: -o-linear-gradient(45deg, rgba(255,255,255,1) 6%,rgba(222,222,222,1) 19%,rgba(210,210,210,1) 22%,rgba(237,237,237,1) 39%,rgba(214,214,214,1) 50%,rgba(222,222,222,1) 58%,rgba(196,196,196,1) 67%,rgba(214,214,214,1) 83%,rgba(214,214,214,1) 83%,rgba(237,237,237,1) 90%); /* Opera 11.1+ */
+  background: -webkit-gradient(45deg, rgba(255,255,255,1) 6%, rgba(222,222,222,1) 19%, rgba(210,210,210,1) 22%, rgba(237,237,237,1) 39%, rgba(214,214,214,1) 50%, rgba(222,222,222,1) 58%, rgba(196,196,196,1) 67%, rgba(214,214,214,1) 83%, rgba(214,214,214,1) 83%, rgba(237,237,237,1) 90%); /* Old webkit */
+  background: linear-gradient(45deg, rgba(255,255,255,1) 6%,rgba(222,222,222,1) 19%,rgba(210,210,210,1) 22%,rgba(237,237,237,1) 39%,rgba(214,214,214,1) 50%,rgba(222,222,222,1) 58%,rgba(196,196,196,1) 67%,rgba(214,214,214,1) 83%,rgba(214,214,214,1) 83%,rgba(237,237,237,1) 90%); /* W3C, IE 10+, FF 16+, Chrome 26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
@@ -137,7 +116,7 @@ main {
   cursor: default;
 }
 
-main p{  /*:nth-child(1)*/
+main p{  
   margin-top: 1vmin;/*10px;*/
 }
 
@@ -157,9 +136,11 @@ footer p {
   height: 18vmin;/*200px;*/
   border: inset 6px white; /*6px white;*/
   background: rgb(255,255,255); /* Old browsers */
-  background: -moz-linear-gradient(45deg, rgba(255,255,255,1) 6%, rgba(222,222,222,1) 19%, rgba(210,210,210,1) 22%, rgba(237,237,237,1) 39%, rgba(214,214,214,1) 50%, rgba(222,222,222,1) 58%, rgba(196,196,196,1) 67%, rgba(214,214,214,1) 83%, rgba(214,214,214,1) 83%, rgba(237,237,237,1) 90%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(45deg, rgba(255,255,255,1) 6%,rgba(222,222,222,1) 19%,rgba(210,210,210,1) 22%,rgba(237,237,237,1) 39%,rgba(214,214,214,1) 50%,rgba(222,222,222,1) 58%,rgba(196,196,196,1) 67%,rgba(214,214,214,1) 83%,rgba(214,214,214,1) 83%,rgba(237,237,237,1) 90%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(45deg, rgba(255,255,255,1) 6%,rgba(222,222,222,1) 19%,rgba(210,210,210,1) 22%,rgba(237,237,237,1) 39%,rgba(214,214,214,1) 50%,rgba(222,222,222,1) 58%,rgba(196,196,196,1) 67%,rgba(214,214,214,1) 83%,rgba(214,214,214,1) 83%,rgba(237,237,237,1) 90%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: -webkit-linear-gradient(45deg, rgba(255,255,255,1) 6%,rgba(222,222,222,1) 19%,rgba(210,210,210,1) 22%,rgba(237,237,237,1) 39%,rgba(214,214,214,1) 50%,rgba(222,222,222,1) 58%,rgba(196,196,196,1) 67%,rgba(214,214,214,1) 83%,rgba(214,214,214,1) 83%,rgba(237,237,237,1) 90%); /* Chrome10-25, Safari5.1-6 */
+  background: -moz-linear-gradient(45deg, rgba(255,255,255,1) 6%, rgba(222,222,222,1) 19%, rgba(210,210,210,1) 22%, rgba(237,237,237,1) 39%, rgba(214,214,214,1) 50%, rgba(222,222,222,1) 58%, rgba(196,196,196,1) 67%, rgba(214,214,214,1) 83%, rgba(214,214,214,1) 83%, rgba(237,237,237,1) 90%); /* FF 3.6-15 */
+  background: -o-linear-gradient(45deg, rgba(255,255,255,1) 6%,rgba(222,222,222,1) 19%,rgba(210,210,210,1) 22%,rgba(237,237,237,1) 39%,rgba(214,214,214,1) 50%,rgba(222,222,222,1) 58%,rgba(196,196,196,1) 67%,rgba(214,214,214,1) 83%,rgba(214,214,214,1) 83%,rgba(237,237,237,1) 90%); /* Opera 11.1+ */
+  background: -webkit-gradient(45deg, rgba(255,255,255,1) 6%, rgba(222,222,222,1) 19%, rgba(210,210,210,1) 22%, rgba(237,237,237,1) 39%, rgba(214,214,214,1) 50%, rgba(222,222,222,1) 58%, rgba(196,196,196,1) 67%, rgba(214,214,214,1) 83%, rgba(214,214,214,1) 83%, rgba(237,237,237,1) 90%); /* Old webkit */
+  background: linear-gradient(45deg, rgba(255,255,255,1) 6%,rgba(222,222,222,1) 19%,rgba(210,210,210,1) 22%,rgba(237,237,237,1) 39%,rgba(214,214,214,1) 50%,rgba(222,222,222,1) 58%,rgba(196,196,196,1) 67%,rgba(214,214,214,1) 83%,rgba(214,214,214,1) 83%,rgba(237,237,237,1) 90%); /* W3C, IE 10+, FF 16+, Chrome 26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
   overflow: auto;
 }
@@ -176,10 +157,8 @@ footer p {
 
 #ques-header {
   position: relative; 
-  /*left: 50%;*/
   margin-top: 6vmin;
-  /*margin-left: -325px;*/
-  margin-left: auto;
+  margin-left: auto; /*margin-left: -325px;*/
   margin-right: auto;
   width: 56vmin;/*600px;*/
   height: auto; /*38vmin;/*380px;*/
@@ -200,7 +179,6 @@ footer p {
 
 .hint {
   position: relative;
-  /*width: 400px;*/
   margin-left: auto;
   margin-right: auto;
   margin-top: 0;
@@ -219,16 +197,12 @@ footer p {
   margin-top: 3vmin; /*35px;*/
   width: auto;/*65vmin; /*600px;*/
   height: auto;
-  /*overflow: auto;*/
-  /*box-shadow: 1.2vmin 1.2vmin .1vmin #595959 /*8px 8px 2px #595959;/*16px 16px 4px #595959;*/
 }
 
 .choices {
   width: 46vmin; /*400px;*/
   margin-left: auto;
   margin-right: auto;
-  /*height: auto;*/
-  
 }
 
 #btn-container {
@@ -236,7 +210,6 @@ footer p {
   padding-top: 1.2vmin; /*10px;*/
   margin-left: auto;
   margin-right: auto;
-  /*height: auto;*/
   width: auto; /*65vmin; /*400px;*/
 }
 .btn-wrapper {
@@ -256,7 +229,6 @@ footer p {
 }
 
 #options-btn {
- /* font-family: Arial;*/
   z-index: 2;
 }
 
@@ -271,21 +243,19 @@ ol input {
   margin-left: 5px; /*-40px*/
 }
 
- li {
+li {
   padding: 4px 8px;
 }
 
- li a {
+li a {
   text-decoration: none;
 }
-/*
-/* unvisited link */
- li a:link {
+
+li a:link {
   color: black;
 }
 
-/* visited link */
- li a:visited {
+li a:visited {
   color: black;
 }
 
@@ -293,22 +263,9 @@ li a:hover {
   color: hotpink;
 }
 
-/* selected link */
 li a:focus {
   color: rgb(41, 137, 216);  
   color: rgba(41,137,216,1);
-}
-/*
-#postResults {
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 500px;
-  color: blue;
-}
-  
-#anwers {
-  margin-left: 25px;
 }
 
 /* POLL-CREATION STYLING END */
@@ -331,12 +288,10 @@ select {
   height: auto;/*18vmin; /*11.25em or 180px;*/
   box-shadow: 2vmin 2vmin 1vmin #595959;/*1.625em 1.625em .5em; 26px 26px 8px*/
   cursor: pointer;
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none;
+  -webkit-user-select: none; /* Safari 3.1+ */
+     -moz-user-select: none; /* Firefox 2+*/
+      -ms-user-select: none; /* IE 10+ */
+          user-select: none;
 }
 
 #vault-header:active {
@@ -386,7 +341,6 @@ div.left, div.right {
 .right {
   box-shadow: inset -.2vmin .2vmin 1.2vmin .4vmin #595959;;
   border-radius: 10px 0 0 10px;
-  /*padding-right: 25px;*/
   margin-left: 10px;
   left: 50%;
 }
@@ -396,34 +350,12 @@ ul {
   padding: 0;
 }
 
-/* unvisited link */
-li a:link {
-  color: black;
-}
-
-/* visited link */
-li a:visited {
-  color: black;
-}
-
-li a:hover {
-  color: hotpink;
-}
-
-/* selected link */
-li a:focus {
-  color: rgb(41, 137, 21);
-  color: rgba(41, 137, 216, 1);
-}
-  
 /* #vaultChoices styling for questions/options/votes/charts */
 .voterSpace {
   position: relative;
   width: 38vmin;/*40vmin; /*400px;*/
   margin-left: auto;
   margin-right: auto;
-  /*left: 50%;*/
-  /*margin-left: -20vmin;*/
 }
 
 th, td {
@@ -448,7 +380,6 @@ th, td {
   margin-top: 1.5vmin;
   margin-left: auto;/*15px;*/
   margin-right: auto;
-  /*z-index: 2;*/
 }
 
 #centerSp {
@@ -456,7 +387,6 @@ th, td {
 }
 
 #voterBtn {
-  /*font-size: 2vmin;*/
   width: 10vmin; /*150px;*/
   height: 3.5vmin; /*30px;*/
   padding: 0;
@@ -472,13 +402,11 @@ th, td {
   left: 50%;
   margin-top: 6vmin;/*3.5em;*/
   margin-left: -21vmin; /*-14.06em; -21vmin; -225px; -22.5%*/
-  /*min-width: 200px;
-  min-height: 90px;*/
   width: 40vmin;/* 25em or 400px;*/
   height: auto;/*15vmin; /*11.25em or 180px;*/
-  /*max-width: 800px;
-  max-height: 360px;*/
   box-shadow: 2vmin 2vmin 1vmin #595959;
+  /*min-width: 200px; min-height: 90px;*/
+  /*max-width: 800px; max-height: 360px;*/
 }
 
 /* Login header styling and position */
@@ -486,17 +414,15 @@ th, td {
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  /*min-width: 250px;*/
   width: 50vmin;
-  /*max-width: 900px;*/
   box-shadow: 1.2vmin 1.2vmin .1vmin #595959;
+  /*min-width: 250px; max-width: 900px;*/
 } 
 
 #login-header {
   margin-top: 3vmin; /*35px;*/
-  min-height: 157.5px;
+  min-height: 157.5px; /*max-height: 427.5px;*/
   height: 25vmin;/*285px;*/
-  /*max-height: 427.5px;*/
 }
 
 #signin-header {
@@ -514,14 +440,14 @@ th, td {
 
 #signup-header {
   margin-top: 3vmin;/*35px;*/
-  /*height: 37.5vmin;/*330px;  */
 }
 
+/* Button styling */
 img {
   height: 3.8vmin;
   width: 3.8vmin;
   float: left;
-  margin-top: .35vmin;/*8px;*/
+  margin-top: .55vmin;/*8px;*/
   margin-left: .4vmin;/*5px;*/
   border-radius: 2.5vmin;/*30px;*/
 }
@@ -537,6 +463,9 @@ button {
   border: 1px solid white;
   box-shadow: inset -4px -4px 26px 6px #4d4d4d;
   cursor: pointer; 
+}
+
+button:focus {
   outline: none;
 }
 
@@ -557,7 +486,7 @@ button p {
 #github-btn, #account-btn {
   margin-top: 2.5vmin;/*12px;*/
   height: 5vmin;/*50px;*/
-  width: 18vmin;/*220px;*/
+  width: 16vmin;/*220px;*/
 }
 
 #account-btn, #signin-btn {

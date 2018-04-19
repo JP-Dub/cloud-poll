@@ -11,12 +11,12 @@
   
     <nav class="navbar">
       <div class="nav-wrapper">
-        <p class="navbar-left"><a href="/" title="Home Page">Cloud Poll</a></p>
-        <p class="navbar-center"><span id="nav-welcome"><!-- if(username) { Welcome, [username] } --></span></p>
+        <p class="navbar-left"><a href="/" title="Home Page">Home</a><!-- | <a href="/logout/vault">Log Out</a>--></p>
+        <p class="navbar-center"><span id="nav-welcome"></span></p>
         <p class="navbar-right"><select id="selectUser" >
-                                  <option value="default">Select User</option>
-                                </select>
-                              </p>
+            <option value="default">Select User</option>
+          </select>
+        </p>
       </div>
     </nav>
 
@@ -40,14 +40,12 @@
             <ul id = "vaultResults">
 	    	      <!--questions show here
 		          <li>What color are your eyes?</li>
-              <li>How many fingers am I holding up?</li>
-              <li>Who was 32nd President?</li>
 		          -->
             </ul>
           </article>
         </div>
         <div class="right">
-          <article><!--width="125" height="100"-->
+          <article>
             <canvas id="myChart" width="150" height="100"></canvas>
             <form id="vaultChoices" method="post" enctype='multipart/form-data'>
               <h2>Question Selected...</h2>
@@ -68,7 +66,6 @@
     <script type="text/javascript" src="common/ajax-functions.js"></script>
     <script type="text/javascript" src="controllers/pageController.js"></script>
   	<script type="text/javascript" src="controllers/clientData.js"></script>
-  	<!--<script type="text/javascript" src="controllers/vaultController.client.js"></script>-->
 
   </body>
 </html>

@@ -8,18 +8,12 @@ var User = new Schema({
   date: {
     time: Date
   },
-  google: {
-    id: String,
-    displayName: String,
-    username: String,
-  },
-  github: {
-    id: String,
-    displayName: String,
-    username: String,
-    email: String
+  chart : {
+    graph: Number
   },
   signin: {
+    account: String,
+    id: Number,
     displayName: String,
     email: String,
     password: String
@@ -76,4 +70,35 @@ module.exports = mongoose.model('User', User);*/
     query.exec()
     
 
+*/
+
+/*
+var User = new Schema({
+  date: {
+    time: Date
+  },
+  google: {
+    id: String,
+    displayName: String,
+    username: String,
+  },
+  github: {
+    id: String,
+    displayName: String,
+    username: String,
+    email: String
+  },
+  signin: {
+    displayName: String,
+    email: String,
+    password: String
+  },
+  poll: [{
+      question: String,
+      answers: [{
+        options: String,
+        votes: Number
+      }]
+  }]           
+});
 */

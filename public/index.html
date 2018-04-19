@@ -4,10 +4,11 @@
     <title>FCC Challenge: Build a voting app</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=.5">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/public/css/style.css"> 
   </head>
   <body>
+    
     <nav class="navbar">
       <div class="nav-wrapper">
         <p class="navbar-left"><a href="/poll-vault" title="View and vote on any of the user created polls or search for a user. You do not need to sign up for an account to do this!">Poll Vault</a></p>
@@ -23,7 +24,7 @@
       <main>   
         <p><em>Create custom polls to share with your friends and family!</em></p> 
       </main>
-    </div> <!-- end of div .container -->
+    </div>
     
     <div id="login-header" class="container">
       <header>
@@ -38,13 +39,10 @@
     </div>
      
     <div id="signin-header" class="container">
-      <!--<header>
-        <h1>Sign In</h1> 
-      </header>-->
       <main>
         <form id="form" method="post" action="/auth/login">
           <label>Username:</label><br>
-          <input class="input" type="text" name="username" autocomplete="username" required size="32"><br>
+          <input class="input" type="text" title="Please fill out this field. Username is case-sensitive." name="username" autocomplete="username" required size="32"><br>
           <label>Password:</label><br>
           <input class="input" type="password" name="password" autocomplete="current-password" required size="32"><br>
           <button id="signin-btn" type="submit"><p>Log in</p></button>
@@ -63,34 +61,8 @@
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/jquery.shadow-animation/1/mainfile"></script>
-    <!--<script src="jquery-shadow-animation/jquery.animate-shadow.js"></script>-->
     <script type="text/javascript" src="common/ajax-functions.js"></script>
     <script type="text/javascript" src="controllers/pageController.js"></script>
   	<script type="text/javascript" src="controllers/clientData.js"></script> 
   </body>
 </html>
-
-<!-- 
-
-    <div class="container">
-    
-      <header>
-      <h1>
-        Cloud Poll
-      </h1>
-      <p>
-        <em>Create custom polls to share with your friends and family!</em>
-      </p>   
-    </header>
-
-    <main>   
-      <p>Login or register to create and share polls or view this user's poll vault.</p>
-      <button>Login</button>
-  
-        <button>Poll Vault</button>
-     <button>Register</button>
-    </main>
-    
-    </div> 
-
--->

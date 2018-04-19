@@ -4,43 +4,38 @@
     <title>FCC Challenge: Build a voting app</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=.5">
-    <link rel="stylesheet" href="public/css/style.css"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/public/css/style.css"> 
   </head>
   <body>
     
     <nav class="navbar">
 		  <div class="nav-wrapper">
-			  <p class="navbar-left"><a href="/" title="Home Page">Cloud Poll</a> | <a href="/logout">Log out</a></p>
+			  <p class="navbar-left"><a href="/logout/creation">Log Out</a></p>
 			  <p class="navbar-center"><span id="nav-welcome"><!-- Welcome, [username]--></span></p>
         <p class="navbar-right"><a href="/poll-vault">Poll Vault</a></p>
 		  </div>
     </nav>
-     
-      <!--enctype="multipart/form-data"   action="/poll-creation/:save" -->
+
     <div id="ques-header" class="container">
       <header>
         <h1>Poll Creation</h1> 
       </header>
       <main class="questions"> 
-      
         <p><em>You can edit any questions you create.</em></p>
         <div id="edit">
           <ol id="list">
           </ol>
         </div>
-        <!--  <p><em>Write your question below...</em></p>
-          <input type="text" name="question" required placeholder="What is your favorite color?" size="46"> -->
-          <p class="hint"><sub>Hint: press either side to reset the form</sub></p>
+        <p class="hint"><sub>Hint: press either side to reset the form</sub></p>
       </main> 
-      
-    </div> <!-- end of div .container -->
+    </div> 
     
     <div id="choice-header" class="container">
       <header>
         <h1>Create</h1>
       </header>
-      <main class="choices"> <!-- action="poll-creation/:saved" enctype="multipart/form-data" -->
+      <main class="choices">
         <form id="creation-form" method="post" name="cloudPoll" enctype="multipart/form-data">
           <p><em>Create your poll below or select an old one from above to edit...</em></p>
           <input  type="text" name="question" required placeholder="What is your favorite color?" size="40"><br>
@@ -57,16 +52,10 @@
           <button id="submit-btn" type="submit"><p>Save Poll</p></button>  
           <button id="update-btn" type="submit" disabled="disabled"><p>Disabled</p></button>
           <button id="delete-btn" type="submit" disabled="disabled"><p>Disabled</p></button><br>
-          <p class="blank"><!--BLANK SPACE--></p>
+          <p><!--INTENTIONAL BLANK SPACE--></p>
         </div>
       </div>
     </div>     
-    
-    <div id="postResults">
-      <p id="status"></p>
-      <p id="question"></p>
-      <p id="answers"></p>
-    </div>
 
     <footer class="navbar">
       <p>Copyright &copy 2018 jDub's Code Studio</p>
