@@ -5,7 +5,6 @@ var routes = require('./app/routes/index.js'),
     passport = require('passport'),
     mongoose = require('mongoose'),
     express = require('express'),
-    flash = require('req-flash'),
     app = express();
 
 require('dotenv').load();
@@ -18,15 +17,20 @@ app.use('/controllers', express.static(process.cwd() + '/app/controllers'));
 app.use('/public', express.static(process.cwd() + '/public'));
 app.use('/common', express.static(process.cwd() + '/app/common'));
 
+app.set('trust proxy', 1);
 app.use(session({
-	secret: 'secretClementine',
+    name: 'cloud_polling',
+	secret: 'secreteSerpentine', //'secretClementine',
 	resave: false,
-	saveUninitialized: true
+	saveUninitialized: true,
+	cookie : {
+	    secure: true
+	}
+	
 }));
 
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(flash()); // not in use;
 
 routes(app, passport);
 
