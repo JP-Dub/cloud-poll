@@ -26,7 +26,7 @@ module.exports = function (passport) {
 		process.nextTick(function () {
 			User.findOne({ 'signin.id': profile.id }, function (err, user) {
 				if (err) return done(err);
-				//console.log(user, "user")
+				
 				if (user) {
 					console.log("user confirmed")
 					return done(null, user);
