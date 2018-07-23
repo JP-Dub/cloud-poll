@@ -28,10 +28,10 @@ module.exports = function (passport) {
 				if (err) return done(err);
 				
 				if (user) {
-					console.log("user confirmed")
+				
 					return done(null, user);
 				} else {
-					console.log("creating new user")
+
 					var newUser = new User();
 					
 					newUser.date.time =  new Date(Date.now()).toString();
@@ -66,33 +66,3 @@ module.exports = function (passport) {
         }
     ));
 };
-
-
-
-
-/*
-	function (token, refreshToken, profile, done) {
-		process.nextTick(function () {
-			User.findOne({ 'github.id': profile.id }, function (err, user) {
-				if (err) return done(err);
-				//console.log(user, "user")
-				if (user) {
-					console.log("user confirmed")
-					return done(null, user);
-				} else {
-					console.log("creating new user")
-					var newUser = new User();
-
-					newUser.github.id = profile.id;
-					newUser.github.username = profile.username;
-					newUser.github.displayName = profile.displayName;
-
-					newUser.save(function (err) {
-						if (err) return console.error(err);
-						return done(null, newUser);
-					});
-				}
-			});
-		});
-	}));
-*/

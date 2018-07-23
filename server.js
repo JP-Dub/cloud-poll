@@ -26,7 +26,6 @@ app.use(session({
 	cookie : {
 	    secure: true
 	}
-	
 }));
 
 app.use(passport.initialize());
